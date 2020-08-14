@@ -69,6 +69,7 @@
                         }else{
                             if (liff.scanCode) {
                                 liff.scanCode().then(result => {
+                                    alert(JSON.stringify(result));
                             }).catch(err => {
                                 alert('scanCode failed!')
                             });
