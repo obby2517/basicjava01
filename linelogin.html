@@ -74,6 +74,16 @@
                                     //alert(JSON.stringify(result));
                                     var obj = JSON.parse(JSON.stringify(result));
                                     $('#scan_result').html(obj.value);
+                        //ส่ง message เข้าห้อง    
+                         liff.sendMessages([{
+                            'type': 'text',
+                            'text': obj.value
+                        }]).then(function() {
+                            window.alert('Message sent');
+                        }).catch(function(error) {
+                            window.alert('Error sending message: ' + error);
+                        });
+                        
                             }).catch(err => {
                                 alert('scanCode failed!')
                             });
