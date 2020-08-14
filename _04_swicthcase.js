@@ -32,20 +32,44 @@ function changebg(value) {
 
     var setcolor = "white";
     switch (color) {
-        case "1":
-            setcolor = "blue"
-            console.log(setcolor);
-            //คำสั่งกำหนดสีพื้นหลังด้วย javascript
-            document.body.style.backgroundColor = setcolor;
-            break;
-        case "2":
+        case "0":
             setcolor = "red"
             console.log(setcolor);
             //คำสั่งกำหนดสีพื้นหลังด้วย javascript
             document.body.style.backgroundColor = setcolor;
             break;
-        case "3":
+        case "1":
             setcolor = "yellow"
+            console.log(setcolor);
+            //คำสั่งกำหนดสีพื้นหลังด้วย javascript
+            document.body.style.backgroundColor = setcolor;
+            break;
+        case "2":
+            setcolor = "pink"
+            console.log(setcolor);
+            //คำสั่งกำหนดสีพื้นหลังด้วย javascript
+            document.body.style.backgroundColor = setcolor;
+            break;
+        case "3":
+            setcolor = "green"
+            console.log(setcolor);
+            //คำสั่งกำหนดสีพื้นหลังด้วย javascript
+            document.body.style.backgroundColor = setcolor;
+            break;
+        case "4":
+            setcolor = "orange"
+            console.log(setcolor);
+            //คำสั่งกำหนดสีพื้นหลังด้วย javascript
+            document.body.style.backgroundColor = setcolor;
+            break;
+        case "5":
+            setcolor = "blue"
+            console.log(setcolor);
+            //คำสั่งกำหนดสีพื้นหลังด้วย javascript
+            document.body.style.backgroundColor = setcolor;
+            break;
+        case "6":
+            setcolor = "purple"
             console.log(setcolor);
             //คำสั่งกำหนดสีพื้นหลังด้วย javascript
             document.body.style.backgroundColor = setcolor;

@@ -12,7 +12,7 @@ var status =(age >= 60)?"เกษียณ":"ยังทำงานอยู�
 console.log(status);
 alert(status);
 
-document.write(name+"<br>");
-document.write(email+"<br>");
-document.write(age+"<br>");
-document.write(status);
+document.write("ชื่อ "+name+"<br>");
+document.write("อีเมลล์ "+email+"<br>");
+document.write("อายุ "+age+"<br>");
+document.write("สถานะ "+status);

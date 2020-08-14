@@ -6,16 +6,29 @@
 </head>
 <body>
 
+
+
    <select name="selectcolor" id="selectcolor"onchange="changebg(selectcolor.value)">
        <option value="0">Please select color</option>
-       <option value="1">Blue</option>
-       <option value="2">Red</option>
-       <option value="3">Yellow</option>
+       <option value="1">Yellow</option>
+       <option value="2">pink</option>
+       <option value="3">green</option>
+       <option value="4">orange</option>
+       <option value="5">blue</option>
+       <option value="6">purple</option>
    </select> 
+
+   <button onclick="wakeup()">click now</button>
+   <button onclick="showinfo('obby','jarayut@gmail.com')">showinfo</button>
+   <button onclick="document.write('พื้นที่คือ '+area(5,6)[0]+'ตร.ม. ยอดเงินที่ใช้ '+area(50,6)[1].toFixed(2).replace(/\d(?=(\d{3})+\.)/g,'$&,')+'บาท')">calculate</button>
+
   <!-- <script src="_01_variable.js"></script> -->
     <!-- <script src="_02_confirm.js"></script> -->
     <!-- <script src="_03_prompt.js"></script> -->
-    <!-- <script src="_04_swicthcase.js"></script> -->
-    <script src="_05_forloop.js"></script>
+    <script src="_04_swicthcase.js"></script>
+    <!-- <script src="_05_forloop.js"></script> -->
+    <!-- <script src="_06_function.js"></script> -->
+    <script src="_07_array_object.js"></script>
+    
 </body>
 </html>

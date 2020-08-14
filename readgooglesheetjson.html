@@ -1,0 +1,55 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>read google sheet</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+      <h2 class="text-center mt-5 mb-3">รายชื่อทีมงาน</h2>
+        <div class="table-resposive">
+            <table class="table table-bordered">
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            //ไฟล์ url json ของ google sheet
+            var spreadsheetID = "1IGrt3gx9bvBKoGG-0Ak6ad1856OpUnTHIe9CrhCeezY";
+            var sheetURL =
+                " https://spreadsheets.google.com/feeds/cells/1IGrt3gx9bvBKoGG-0Ak6ad1856OpUnTHIe9CrhCeezY/1/public/full?alt=json"
+            //ฟังก์ชั่นอ่าน json ด้วย jquery
+            $.getJSON(sheetURL, function(data){
+                var entry = data.feed.entry;
+
+                console.log(entry);
+                var trstring = ''; 
+                var row = 0;
+
+                for (var i=0 ; i < entry.length; i++) {
+                        if(row % 5 == 0){
+                            trstring += "<tr>";
+                            trstring += "<td>"+entry[i].content.$t+"</td>"; 
+                        }else{
+                            trstring += "<td>"+entry[i].content.$t+"</td>"; 
+                        }
+                    row++;
+                }
+
+                 trstring += "</tr>";
+                
+                $('table tbody').append(trstring);
+            });
+        });
+    </script>
+</body>
+
+</html>

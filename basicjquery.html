@@ -1,0 +1,64 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Basic jquery</h1>
+    <h1>wellcome</h1>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda atque in ipsum incidunt fuga dignissimos obcaecati, voluptatibus quo consequuntur illum neque eveniet quaerat molestias excepturi, illo fugiat ut asperiores nulla?
+    </p>
+    firstname:<input type="text" name="firstname" id="firstname"><br>
+    email:<input type="email" name="email" id="email"><br>
+    Birth Date : <input type="date" name="birthdate" id="birthdate">
+
+
+<button>Submit</button>
+<p id="result"></p>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+
+
+//fuction คำนวณอายุ
+function getAge(dateVal) {
+    var birthday = new Date(dateVal);//วันที่เกิดมา
+    var today = new Date();//วันที่ปัจจุบัน
+    var ageInMilliseconds = new Date(today - birthday);
+    var years = ageInMilliseconds / (24 * 60 * 60 * 1000 * 365.25 );
+    var months = 12 * (years % 1);
+    var days = Math.floor(30 * (months % 1));
+    return Math.floor(years) + ' years ' + Math.floor(months) + ' months ' + days + ' days';
+
+        }        
+$(function(){
+  //alert("Hello jquery");
+  $("h1").hide();// jquery effect hide
+  $("h1").show();
+  //jquery css properties
+  $("h1").css("color","red");
+  $("p").css("background-color","yellow");// 
+//การใส่เหตุการณ์กดปุ่ม
+$("button").click(function(){
+//alert("hello");
+//$("p").fadeOut(3000);
+$("p").slideToggle(3000);
+var getfirstname = $("input#firstname").val();
+var getemail = $("input#email").val();
+
+alert(getfirstname+getemail);
+});
+//เหตุกรณ์เมื่ออออกจากช่องemail
+$("input#email").blur(function(){
+$("#result").html($("input#firstname").val()+$("input#email").val());
+});
+
+//เหตุกรณ์เมื่อเลืกวันเกิด
+$("input#birthdate").change(function(){
+    var getbirthdate = $("input#birthdate").val();
+$("#result").html(getAge(getbirthdate));
+});
+});
+    </script>
+</body>
+</html>

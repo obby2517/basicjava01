@@ -1,0 +1,35 @@
+{
+    "category":
+        {
+            "electronic": [
+            {
+                "name": "notebook",
+                "price": 20000,
+                "qty": 5,
+                "img": "https://image.freepik.com/free-photo/open-laptop-with-blank-white-screen-white-desk-against-black-wooden-backdrop_23-2147979109.jpg"
+            },
+            {
+                "name": "camera",
+                "price": 10000,
+                "qty": 10,
+                "img": "https://image.freepik.com/free-vector/analog-camera-icon_23-2147511482.jpg"
+            }
+        ],
+            "cloth": [
+                {
+                    "name": "levis",
+                    "price": 600,
+                    "qty": 7,
+                    "img": "https://media.istockphoto.com/photos/blue-jeans-isolated-with-clipping-path-picture-id600373506"
+                },
+                {
+                    "name": "polo",
+                    "price": 1000,
+                    "qty": 9,
+                    "img": "https://image.freepik.com/free-vector/pack-coloured-polo-shirts-with-shadows_23-2148616084.jpg"
+                }
+            ]
+            
+        }
+    
+}
