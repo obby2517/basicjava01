@@ -72,7 +72,7 @@
                             if (liff.scanCode) {
                                 liff.scanCode().then(result => {
                                     //alert(JSON.stringify(result));
-                                    var obj = JSON.parse(result);
+                                    var obj = JSON.parse(JSON.stringify(result));
                                     $('#scan_result').html(obj.value);
                             }).catch(err => {
                                 alert('scanCode failed!')
