@@ -44,8 +44,9 @@
     <script src="https://static.line-scdn.net/liff/edge/versions/2.3.0/sdk.js"></script>
     <!-- <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script> -->
     <script>
-        liff.init({ liffId: "1654727760-wMZEBPr3" }, () => {
-          if (liff.isLoggedIn()) {
+        $(function(){
+    liff.init({ liffId: "1654727760-wMZEBPr3" }, () => {
+        if (liff.isLoggedIn()) {
               // sendMessages call
                 document.getElementById('sendmessagebutton').addEventListener('click', function () {
 
@@ -88,11 +89,14 @@
                     }
                 });
 
-          } else {
+
+        }else{
             liff.login();
-          }
-        }, err => console.error(err.code, error.message));
-      </script>
+        }
+    },err => console.error(err.code,error.message));    
+}); 
     
+    </script>
 </body>
+
 </html>
