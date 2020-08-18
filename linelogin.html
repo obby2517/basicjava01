@@ -1,80 +1,83 @@
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>personal book</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>Personal Login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 </head>
-
 <body>
+    
     <div class="container mt-4">
+
         <div class="row">
-            <div class="col-md-6">
-                <button class="btn btn-block btn-primary" id ="btnScan"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-upc-scan" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" d="M1.5 1a.5.5 0 0 0-.5.5v3a.5.5 0 0 1-1 0v-3A1.5 1.5 0 0 1 1.5 0h3a.5.5 0 0 1 0 1h-3zM11 .5a.5.5 0 0 1 .5-.5h3A1.5 1.5 0 0 1 16 1.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 1-.5-.5zM.5 11a.5.5 0 0 1 .5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 1 0 1h-3A1.5 1.5 0 0 1 0 14.5v-3a.5.5 0 0 1 .5-.5zm15 0a.5.5 0 0 1 .5.5v3a1.5 1.5 0 0 1-1.5 1.5h-3a.5.5 0 0 1 0-1h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 1 .5-.5z"/>
-                    <path d="M3 4.5a.5.5 0 0 1 1 0v7a.5.5 0 0 1-1 0v-7zm2 0a.5.5 0 0 1 1 0v7a.5.5 0 0 1-1 0v-7zm2 0a.5.5 0 0 1 1 0v7a.5.5 0 0 1-1 0v-7zm2 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-7zm3 0a.5.5 0 0 1 1 0v7a.5.5 0 0 1-1 0v-7z"/>
-                  </svg>
-                    Scan code
+            <div class="col">
+                <button class="btn btn-block btn-primary" id="btnScan">
+                    <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-upc-scan" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M1.5 1a.5.5 0 0 0-.5.5v3a.5.5 0 0 1-1 0v-3A1.5 1.5 0 0 1 1.5 0h3a.5.5 0 0 1 0 1h-3zM11 .5a.5.5 0 0 1 .5-.5h3A1.5 1.5 0 0 1 16 1.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 1-.5-.5zM.5 11a.5.5 0 0 1 .5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 1 0 1h-3A1.5 1.5 0 0 1 0 14.5v-3a.5.5 0 0 1 .5-.5zm15 0a.5.5 0 0 1 .5.5v3a1.5 1.5 0 0 1-1.5 1.5h-3a.5.5 0 0 1 0-1h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 1 .5-.5z"/>
+                        <path d="M3 4.5a.5.5 0 0 1 1 0v7a.5.5 0 0 1-1 0v-7zm2 0a.5.5 0 0 1 1 0v7a.5.5 0 0 1-1 0v-7zm2 0a.5.5 0 0 1 1 0v7a.5.5 0 0 1-1 0v-7zm2 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-7zm3 0a.5.5 0 0 1 1 0v7a.5.5 0 0 1-1 0v-7z"/>
+                    </svg> 
+                    Scan Code
                 </button>
-                scan result : <span id ="scan_result"></span>
+                Scan Result : <span id="scan_result"></span>
             </div>
             <div class="col">
-                <button class="btn btn-block btn-success" id ="btnSendmessage"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chat-left-dots" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" d="M14 1H2a1 1 0 0 0-1 1v11.586l2-2A2 2 0 0 1 4.414 11H14a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
-                    <path d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
-                  </svg>Send massage
+                <button class="btn btn-block btn-success" id="btnSendMessage">
+                    <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-chat-left-dots" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M14 1H2a1 1 0 0 0-1 1v11.586l2-2A2 2 0 0 1 4.414 11H14a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                        <path d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                    </svg> 
+                    Message
                 </button>
             </div>
         </div>
+
         <div class="row mt-3">
             <div class="col-md-12">
-            <div class="container">
-                <form>
-                    <div class="form-group row">
-                        <label for="username" class="col-sm-3 col-form-label">fullname</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" name="fullName" id="fullName" placeholder="">
+                <div class="container">
+                    <form>
+                        <div class="form-group row">
+                            <label for="username" class="col-sm-3 col-form-label">Username: </label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" name="username" id="username" placeholder="">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="password" class="col-sm-3 col-form-label">password</label>
-                        <div class="col-sm-9">
-                            <input type="password" class="form-control" name="password" id="password" placeholder="">
+                        <div class="form-group row">
+                            <label for="password" class="col-sm-3 col-form-label">Password: </label>
+                            <div class="col-sm-9">
+                                <input type="password" class="form-control" name="password" id="password" placeholder="">
+                            </div>
                         </div>
-                    </div>
-                    
-                    <div class="form-group row">
-                        <div class="col-sm-12">
-                            <button id="login" type="submit" class="btn btn-block btn-lg btn-info">login</button>
+                        <div class="form-group row">
+                            <div class="col-sm-12">
+                                <button id="login" type="button" class="btn btn-block btn-lg btn-info">Login</button>
+                            </div>
                         </div>
-                    </div>
-                </form>
-            </div>
+                    </form>
+                </div>
             </div>
         </div>
 
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
-    </script>
-    <script src="https://static.line-scdn.net/liff/edge/versions/2.3.0/sdk.js">
-    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://static.line-scdn.net/liff/edge/versions/2.3.0/sdk.js"></script>
     <script>
-    $(function(){
-    liff.init({ liffId: "1654714579-kdPRpre4" }, () => {
-        if (liff.isLoggedIn()) {
-            //เหตุการณ์กดปุ่ม scan
-            $('button#btnScan').click(function(){
-                if (!liff.isInClient()) { // เช็คว่าเปิดบน mobile หรือไม่ (ถ้าไม่ได้เปิดบน mobile)
+        $(function(){
+            liff.init({ liffId: "1654714579-kdPRpre4" }, () => {
+                if (liff.isLoggedIn()) {
+                    // เหตุการณ์กดปุ่ม Scan
+                    $('button#btnScan').click(function(){
+                        if (!liff.isInClient()) { // เช็คว่าเปิดบน mobile หรือไม่ (ถ้าไม่ได้เปิดบน mobile)
                             alert('ต้องเปิดบนมือถือเท่านั้น');
                         }else{
                             if (liff.scanCode) {
                                 liff.scanCode().then(result => {
-                                    //alert(JSON.stringify(result));
+
+                                    // alert(JSON.stringify(result));
                                     var obj = JSON.parse(JSON.stringify(result));
                                     $('#scan_result').html(obj.value);
-                                    //ส่ง message เข้าห้อง    
+                                    
+                                    // ส่ง messeage เข้าห้องแชท
                                     liff.sendMessages([{
                                         'type': 'text',
                                         'text': obj.value
@@ -83,38 +86,58 @@
                                     }).catch(function(error) {
                                         window.alert('Error sending message: ' + error);
                                     });
+                            
 
-
-                           
-                            }).catch(err => {
-                                alert('scanCode failed!')
-                            });
+                                }).catch(err => {
+                                    alert('scanCode failed!')
+                                });
                             }
                         }
                     });
 
-                    //เหตุการณ์กดปุ่ม send message
-                    $('button#btnSendmessage').click(function(){
+                    // เหตุการณ์กดปุ่ม send message
+                    $('button#btnSendMessage').click(function(){
                         if (!liff.isInClient()) { // เช็คว่าเปิดบน mobile หรือไม่ (ถ้าไม่ได้เปิดบน mobile)
                             alert('ต้องเปิดบนมือถือเท่านั้น');
                         }else{
-                        liff.sendMessages([{
-                            'type': 'text',
-                            'text': "You've successfully sent a message! Hooray!"
-                        }]).then(function() {
-                            window.alert('Message sent');
-                        }).catch(function(error) {
-                            window.alert('Error sending message: ' + error);
-                        });
-                    }
-                });
-        }else{
-            liff.login();
-        }
-    },err => console.error(err.code,error.message));    
-}); 
-    
+                            liff.sendMessages([{
+                                'type': 'text',
+                                'text': "You've successfully sent a message! Hooray!"
+                            }]).then(function() {
+                                window.alert('Message sent');
+                            }).catch(function(error) {
+                                window.alert('Error sending message: ' + error);
+                            });
+                        }
+                    });
+
+                    // เหตุการณ์กดปุ่ม Submit form login
+                    $('button#login').click(function(){
+                        var username = $('input#username').val(); // รับค่า username จากฟอร์ม
+                        var password = $('input#password').val(); // รับค่า password จากฟอร์ม
+
+                        if(username != '' || password != ''){
+                            // ส่ง username/password เข้าห้องแชท
+                            liff.sendMessages([{
+                                'type': 'text',
+                                'text': 'Username: ' + username + '\nPassword: '+password
+                            }]).then(function() {
+                                window.alert('Message sent');
+                            }).catch(function(error) {
+                                window.alert('Error sending message: ' + error);
+                            });
+                        }else{
+                            alert('Username / Password Cannot blank !');
+                        }
+
+                    });
+
+
+                }else{
+                    liff.login();
+                }
+            }, err => console.error(err.code, error.message));
+        });
     </script>
 </body>
-
 </html>
