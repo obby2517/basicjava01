@@ -7,14 +7,14 @@
 </head>
 <body>
 <h1>Hello world!</h1>
-<button id="btnQR" onclick="window.location='https://line.me/R/nv/QRCodeReader"">Open QR Code Reader</button>
+<button id="btnQR" onclick="window.location='https://line.me/R/nv/QRCodeReader'">Open QR Code Reader</button>
 <script src="https://static. line-scdn.net/liff/edge/versions/2.4.0/sdk.js"></script>
 <script>
 async function main() {
-await liff.init({ liffId: "1653575653-OmBzOyAJ" })
-const queryString = decodeURIComponent(window.location.search)
-const params = new URL SearchParams (queryString)
-if (params.get("param") !== null) {
+await liff.init({ liffId: "1654949655-PDJ1xwZ7" })
+    const queryString = decodeURIComponent(window.location.search)
+    const params = new URL SearchParams (queryString)
+     if (params.get("param") !== null) {
 document.getElementsByTagName("h1")[0].innerHTML = params.get("param")
 }
 }
