@@ -141,7 +141,7 @@
                             // ส่ง username/password เข้าห้องแชท
                             liff.sendMessages([{
                                 'type': 'text',
-                                'text': 'จำนวนคนผู้ใช้บริการ : '+cost+ '\nราคาต่อคน : '+username+ '\nเพิ่มอาหาร : '+password+ '\nเพิ่มเครื่องดื่ม : '+text3+ '\ค่าใช้จ่ายอื่น ๆ : '+text4+ '\รวมเป็นเงิน : '+(cost*username)+password+text3+text4+' บาท'
+                                'text': 'จำนวนคนผู้ใช้บริการ : '+cost+ '\nราคาต่อคน : '+username+ '\nเพิ่มอาหาร : '+password+ '\nเพิ่มเครื่องดื่ม : '+text3+ '\nค่าใช้จ่ายอื่น ๆ : '+text4+ '\รวมเป็นเงิน : '+(cost*username)+(password+text3+text4)+' บาท'
                             }]).then(function() {
                                 window.alert('Message sent');
                             }).catch(function(error) {
