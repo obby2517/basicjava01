@@ -38,31 +38,31 @@
                             <div class="form-group row">
                             <label for="cost" class="col-sm-3 col-form-label">จำนวนคน : </label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" name="cost" id="cost" placeholder="text">
+                                <input type="text" class="form-control" name="cost" id="cost" placeholder="ยอดผู้ร่วมงาน">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="username" class="col-sm-3 col-form-label">ราคาต่อคน : </label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" name="username" id="username" placeholder="text">
+                                <input type="text" class="form-control" name="username" id="username" placeholder="ราคาต่อคน">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="password" class="col-sm-3 col-form-label">เพิ่มอาหาร : </label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" name="password" id="password" placeholder="text">
+                                <input type="text" class="form-control" name="password" id="password" placeholder="เพิ่มรายการอาหาร">
                             </div>
                         </div>
                           <div class="form-group row">
                             <label for="password" class="col-sm-3 col-form-label">เพิ่มเครื่องดื่ม : </label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" name="text3" id="text3" placeholder="text">
+                                <input type="text" class="form-control" name="text3" id="text3" placeholder="เพิ่มรายการเครื่องดื่ม">
                             </div>
                         </div>
                          <div class="form-group row">
                             <label for="password" class="col-sm-3 col-form-label">ค่าใช้จ่ายอื่น ๆ : </label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" name="text4" id="text4" placeholder="text">
+                                <input type="text" class="form-control" name="text4" id="text4" placeholder="เพิ่มการบริการ">
                             </div>
                         </div>
                          <div class="form-group row">
@@ -136,12 +136,13 @@
                         var password = $('input#password').val(); // รับค่า password จากฟอร์ม
                         var text3 = $('input#text3').val(); // รับค่า text3 จากฟอร์ม
                         var text4 = $('input#text4').val(); // รับค่า text4 จากฟอร์ม
+                        var budget = (cost*username)+(password+text3+text4) 
 
                         if(username != '' || password != ''){
                             // ส่ง username/password เข้าห้องแชท
                             liff.sendMessages([{
                                 'type': 'text',
-                                'text': 'จำนวนคนผู้ใช้บริการ : '+cost+ '\nราคาต่อคน : '+username+ '\nเพิ่มอาหาร : '+password+ '\nเพิ่มเครื่องดื่ม : '+text3+ '\nค่าใช้จ่ายอื่น ๆ : '+text4+ '\nรวมเป็นเงิน : '+((cost*username)+(password+text3+text4))+' บาท'
+                                'text': 'จำนวนคนผู้ใช้บริการ : '+cost+ '\nราคาต่อคน : '+username+ '\nเพิ่มอาหาร : '+password+ '\nเพิ่มเครื่องดื่ม : '+text3+ '\nค่าใช้จ่ายอื่น ๆ : '+text4+ '\nรวมเป็นเงิน : '+budget+' บาท'
                             }]).then(function() {
                                 window.alert('Message sent');
                             }).catch(function(error) {
