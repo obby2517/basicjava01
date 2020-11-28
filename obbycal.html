@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Login</title>
+    <title>ประมาณการค่าใช้จ่าย</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 </head>
 <body>
@@ -36,31 +36,31 @@
                 <div class="container">
                     <form>
                             <div class="form-group row">
-                            <label for="cost" class="col-sm-3 col-form-label">เงินต้น : </label>
+                            <label for="cost" class="col-sm-3 col-form-label">จำนวนคน : </label>
                             <div class="col-sm-9">
                                 <input type="text" class="form-control" name="cost" id="cost" placeholder="text">
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="username" class="col-sm-3 col-form-label">ข้อความที่1 : </label>
+                            <label for="username" class="col-sm-3 col-form-label">ราคาต่อคน : </label>
                             <div class="col-sm-9">
                                 <input type="text" class="form-control" name="username" id="username" placeholder="text">
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="password" class="col-sm-3 col-form-label">ข้อความที่2 : </label>
+                            <label for="password" class="col-sm-3 col-form-label">เพิ่มอาหาร : </label>
                             <div class="col-sm-9">
                                 <input type="text" class="form-control" name="password" id="password" placeholder="text">
                             </div>
                         </div>
                           <div class="form-group row">
-                            <label for="password" class="col-sm-3 col-form-label">ข้อความที่3 : </label>
+                            <label for="password" class="col-sm-3 col-form-label">เพิ่มเครื่องดื่ม : </label>
                             <div class="col-sm-9">
                                 <input type="text" class="form-control" name="text3" id="text3" placeholder="text">
                             </div>
                         </div>
                          <div class="form-group row">
-                            <label for="password" class="col-sm-3 col-form-label">ข้อความที่4 : </label>
+                            <label for="password" class="col-sm-3 col-form-label">ค่าใช้จ่ายอื่น ๆ : </label>
                             <div class="col-sm-9">
                                 <input type="text" class="form-control" name="text4" id="text4" placeholder="text">
                             </div>
@@ -141,7 +141,7 @@
                             // ส่ง username/password เข้าห้องแชท
                             liff.sendMessages([{
                                 'type': 'text',
-                                'text': cost+ '\n'+username*cost + '\n'+password+ '\n'+text3+ '\n'+text4
+                                'text': 'จำนวนคนผู้ใช้บริการ : '+cost+ '\nราคาต่อคน : '+username+ '\nเพิ่มอาหาร : '+password+ '\nเพิ่มเครื่องดื่ม : '+text3+ '\ค่าใช้จ่ายอื่น ๆ : '+text4+ '\รวมเป็นเงิน : '+(cost*username)+password+text3+text4+' บาท'
                             }]).then(function() {
                                 window.alert('Message sent');
                             }).catch(function(error) {
