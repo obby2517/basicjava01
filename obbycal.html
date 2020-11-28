@@ -136,13 +136,15 @@
                         var password = $('input#password').val(); // รับค่า password จากฟอร์ม
                         var text3 = $('input#text3').val(); // รับค่า text3 จากฟอร์ม
                         var text4 = $('input#text4').val(); // รับค่า text4 จากฟอร์ม
-                        var budget = (cost*username)+password+text3+text4
+                        var budget1 = $('input#username').val()*$('input#cost').val()
+                        var budget2 = $('input#password').val()+$('input#text3').val()+$('input#text4').val()
+                        var budgetfin = budget1+budget2
 
                         if(username != '' || password != ''){
                             // ส่ง username/password เข้าห้องแชท
                             liff.sendMessages([{
                                 'type': 'text',
-                                'text': 'จำนวนคนผู้ใช้บริการ : '+cost+ '\nราคาต่อคน : '+username+ '\nเพิ่มอาหาร : '+password+ '\nเพิ่มเครื่องดื่ม : '+text3+ '\nค่าใช้จ่ายอื่น ๆ : '+text4+ '\nรวมเป็นเงิน : '+budget+' บาท'
+                                'text': 'จำนวนคนผู้ใช้บริการ : '+cost+ '\nราคาต่อคน : '+username+ '\nเพิ่มอาหาร : '+password+ '\nเพิ่มเครื่องดื่ม : '+text3+ '\nค่าใช้จ่ายอื่น ๆ : '+text4+ '\nรวมเป็นเงิน : '+budgetfin+' บาท'
                             }]).then(function() {
                                 window.alert('Message sent');
                             }).catch(function(error) {
