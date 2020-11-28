@@ -36,15 +36,15 @@
                 <div class="container">
                     <form>
                         <div class="form-group row">
-                            <label for="username" class="col-sm-3 col-form-label">Name: </label>
+                            <label for="username" class="col-sm-3 col-form-label">ข้อความที่1 : </label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" name="username" id="username" placeholder="กรอกชื่อของท่าน">
+                                <input type="text" class="form-control" name="username" id="username" placeholder="text">
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="password" class="col-sm-3 col-form-label">Mobile: </label>
+                            <label for="password" class="col-sm-3 col-form-label">ข้อความที่2 : </label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" name="password" id="password" placeholder="XXX-XXXXXXX">
+                                <input type="text" class="form-control" name="password" id="password" placeholder="text">
                             </div>
                         </div>
                         <div class="form-group row">
@@ -102,7 +102,7 @@
                         }else{
                             liff.sendMessages([{
                                 'type': 'text',
-                                'text': "You've successfully sent a message! Hooray!"
+                                'text': "สวัสดี"
                             }]).then(function() {
                                 window.alert('Message sent');
                             }).catch(function(error) {
