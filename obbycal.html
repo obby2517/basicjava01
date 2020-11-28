@@ -36,22 +36,11 @@
                 <div class="container">
                     <form>
                             <div class="form-group row">
-                             <div class="col-sm-9">
-                            <label for="planselect">กองงาน</label>
-                            <select id="planselect" class="form-control" name = "planselect">
-                            <option selected>เลือกกองงาน</option>
-                            <option>สำนักงานผู้บังคับบัญชา</option>
-                            <option>กลาง.สสน.สป.</option>
-                            <option>กจห.สสน.สป.</option>
-                            <option>กบก.สสน.สป.</option>
-                            <option>กกบพ.สสน.สป.</option>
-                            <option>กขส.สสน.สป.</option>
-                            <option>กกง.สสน.สป.</option>
-                            <option>กงป.สสน.สป.</option>
-                            <option>มาช่วยปฏิบัติราชการ</option>
-                            </select>
-                            </div> 
-                             </div> 
+                            <label for="cost" class="col-sm-3 col-form-label">เงินต้น : </label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" name="cost" id="cost" placeholder="text">
+                            </div>
+                        </div>
                         <div class="form-group row">
                             <label for="username" class="col-sm-3 col-form-label">ข้อความที่1 : </label>
                             <div class="col-sm-9">
@@ -142,7 +131,7 @@
 
                     // เหตุการณ์กดปุ่ม Submit form login
                     $('button#login').click(function(){
-                        var planselect = $('input#planselect').val(); // รับค่า planselect จากฟอร์ม
+                        var cost = $('input#cost').val(); // รับค่า cost จากฟอร์ม
                         var username = $('input#username').val(); // รับค่า username จากฟอร์ม
                         var password = $('input#password').val(); // รับค่า password จากฟอร์ม
                         var text3 = $('input#text3').val(); // รับค่า text3 จากฟอร์ม
@@ -152,7 +141,7 @@
                             // ส่ง username/password เข้าห้องแชท
                             liff.sendMessages([{
                                 'type': 'text',
-                                'text': planselect+ '\n'+username + '\n'+password+ '\n'+text3+ '\n'+text4
+                                'text': cost+ '\n'+username*cost + '\n'+password+ '\n'+text3+ '\n'+text4
                             }]).then(function() {
                                 window.alert('Message sent');
                             }).catch(function(error) {
