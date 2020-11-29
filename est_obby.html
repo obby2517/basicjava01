@@ -136,15 +136,24 @@
                         var password = $('input#password').val(); // รับค่า password จากฟอร์ม
                         var text3 = $('input#text3').val(); // รับค่า text3 จากฟอร์ม
                         var text4 = $('input#text4').val(); // รับค่า text4 จากฟอร์ม
-                        var budget01 = cost*username;
-                        var budget02 = password+text3+text4;
-                        var budgetfin = budget01+budget02;
+//function รวมค่าใช้จ่าย
+   function computeLoan(){
+	var cost_ = document.getElementById('cost').value;
+	var username_ = document.getElementById('username').value;
+	var password_ = document.getElementById('password').value;
+    var text3_ = document.getElementById('text3').value;       
+    var text4_ = document.getElementById('text4').value;              
+	var payment = ((cost_*username_)+(password_+text3_+text4_)).toFixed(2);
+	payment = payment.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+	document.getElementById('payment').innerHTML = "รวมค่าใช้จ่าย = ฿"+payment;
+}
+                        
 
                         if(cost != '' ||username != '' || password != ''){
                             // ส่ง username/password เข้าห้องแชท
                             liff.sendMessages([{
                                 'type': 'text',
-                                'text': ' 👨‍🍳ประมาณการค่าใช้จ่าย🎉'+'\n\nจำนวนคนผู้ใช้บริการ : '+cost+ '\nราคาต่อคน : '+username+ '\nเพิ่มอาหาร : '+password+ '\nเพิ่มเครื่องดื่ม : '+text3+ '\nค่าใช้จ่ายอื่น ๆ : '+text4+ '\nรวมเป็นเงิน : '+budgetfin
+                                'text': ' 👨‍🍳ประมาณการค่าใช้จ่าย🎉'+'\n\nจำนวนคนผู้ใช้บริการ : '+cost_+ '\nราคาต่อคน : '+username_+ '\nเพิ่มอาหาร : '+password_+ '\nเพิ่มเครื่องดื่ม : '+text3_+ '\nค่าใช้จ่ายอื่น ๆ : '+text4_+ '\nรวมเป็นเงิน : '+payment
                             }]).then(function() {
                                 window.alert('Message sent');
                             }).catch(function(error) {
