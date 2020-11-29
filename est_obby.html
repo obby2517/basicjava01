@@ -138,11 +138,11 @@
                         var text4 = $('input#text4').val(); // รับค่า text4 จากฟอร์ม
 //function รวมค่าใช้จ่าย
    function computeLoan(){
-	var cost_ = document.getElementById('cost').value;
-	var username_ = document.getElementById('username').value;
-	var password_ = document.getElementById('password').value;
-    var text3_ = document.getElementById('text3').value;       
-    var text4_ = document.getElementById('text4').value;              
+	var cost_ = $('input#cost').val();
+	var username_ = $('input#username').val();
+	var password_ = $('input#password').val();
+    var text3_ = $('input#text3').val();     
+    var text4_ = $('input#text4').val();            
 	var payment = ((cost_*username_)+(password_+text3_+text4_)).toFixed(2);
 	payment = payment.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 	document.getElementById('payment').innerHTML = "รวมค่าใช้จ่าย = ฿"+payment;
