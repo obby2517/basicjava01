@@ -138,7 +138,8 @@
                         var text4 = $('input#text4').val(); // รับค่า text4 จากฟอร์ม
                         var out01 = Number(cost)*Number(username);
 			var out02 = Number(password)+Number(text3)+Number(text4);
-			var payment = Number(out01)+Number(out02);
+			var payment_ = Number(out01)+Number(out02);
+			var payment = (payment_).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');  // 12,345.67
 	                   
 	            
                         
