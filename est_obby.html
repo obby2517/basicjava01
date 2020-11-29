@@ -36,9 +36,15 @@
                 <div class="container">
                     <form>
 		            <div class="form-group row">
-                            <label for="contact" class="col-sm-3 col-form-label">ผู้ใช้บริการ(ชื่อ สกุล) : </label>
+                            <label for="contact" class="col-sm-3 col-form-label">ผู้ติดต่อ(ชื่อ สกุล/หน่วยงาน) : </label>
                             <div class="col-sm-9">
                                 <input type="text" class="form-control" name="contact" id="contact" placeholder="ชื่อ สกุล">
+                            </div>
+                        </div>
+			    <div class="form-group row">
+                            <label for="tel" class="col-sm-3 col-form-label">เบอร์โทรศัพท์ : </label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" name="tel" id="tel" placeholder="เบอร์มือถือ">
                             </div>
                         </div>
                             <div class="form-group row">
@@ -137,7 +143,8 @@
 
                     // เหตุการณ์กดปุ่ม Submit form login
                     $('button#login').click(function(){
-                        var contact = $('input#contact').val(); // รับค่า contact จากฟอร์ม			    
+                        var contact = $('input#contact').val(); // รับค่า contact จากฟอร์ม
+			var tel = $('input#tel').val(); // รับค่า tel จากฟอร์ม			    
                         var cost = $('input#cost').val(); // รับค่า cost จากฟอร์ม
                         var username = $('input#username').val(); // รับค่า username จากฟอร์ม
                         var password = $('input#password').val(); // รับค่า password จากฟอร์ม
@@ -155,7 +162,7 @@
                             // ส่ง username/password เข้าห้องแชท
                             liff.sendMessages([{
                                 'type': 'text',
-                                'text': ' 👨‍🍳ประมาณการค่าใช้จ่าย🎉'+'\n\nผู้ใช้บริการ : '+contact+'\n\nจำนวนคนผู้ใช้บริการ : '+cost+ '\nราคาต่อคน : '+username+ '\nเพิ่มอาหาร : '+password+ '\nเพิ่มเครื่องดื่ม : '+text3+ '\nค่าใช้จ่ายอื่น ๆ : '+text4+'\n___________________'+ '\nรวมเป็นเงิน : '+payment+' บาท'
+                                'text': ' 👨‍🍳ประมาณการค่าใช้จ่าย🎉'+'\n\nผู้ติดต่อ : '+contact+'\เบอร์มือถือ : '+tel+'\n\nจำนวนคนผู้ใช้บริการ : '+cost+ '\nราคาต่อคน : '+username+ '\nเพิ่มอาหาร : '+password+ '\nเพิ่มเครื่องดื่ม : '+text3+ '\nค่าใช้จ่ายอื่น ๆ : '+text4+'\n_______________________'+ '\nรวมเป็นเงิน : '+payment+' บาท'
                             }]).then(function() {
                                 window.alert('Message sent');
                             }).catch(function(error) {
