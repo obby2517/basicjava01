@@ -151,11 +151,11 @@
                         var text3 = $('input#text3').val(); // รับค่า text3 จากฟอร์ม
                         var text4 = $('input#text4').val(); // รับค่า text4 จากฟอร์ม
 			    
-                        var cost_ = (cost).toFixed().replace(/\d(?=(\d{3})+\.)/g, '$&,');  // 12,345.67
-                        var username_ = (username).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');  // 12,345.67
-                        var password_ = (password).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');  // 12,345.67
-                        var text3_ = (text3).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');  // 12,345.67
-                        var text4_ = (text4).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');  // 12,345.67
+                        var cost_ = Number(cost).toFixed().replace(/\d(?=(\d{3})+\.)/g, '$&,');  // 12,345.67
+                        var username_ = Number(username).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');  // 12,345.67
+                        var password_ = Number(password).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');  // 12,345.67
+                        var text3_ = Number(text3).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');  // 12,345.67
+                        var text4_ = Number(text4).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');  // 12,345.67
        
 			var out01 = Number(cost)*Number(username);
 			var out02 = Number(password)+Number(text3)+Number(text4);
