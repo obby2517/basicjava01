@@ -35,34 +35,46 @@
             <div class="col-md-12">
                 <div class="container">
                     <form>
+		            <div class="form-group row">
+                            <label for="contact" class="col-sm-3 col-form-label">ผู้ติดต่อ(ชื่อ สกุล/หน่วยงาน)👮 : </label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" name="contact" id="contact" placeholder="ชื่อ สกุล">
+                            </div>
+                        </div>
+			    <div class="form-group row">
+                            <label for="tel" class="col-sm-3 col-form-label">เบอร์โทรศัพท์☎️ : </label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" name="tel" id="tel" placeholder="เบอร์มือถือ">
+                            </div>
+                        </div>
                             <div class="form-group row">
-                            <label for="cost" class="col-sm-3 col-form-label">จำนวนคน : </label>
+                            <label for="cost" class="col-sm-3 col-form-label">จำนวนคน👩‍👩‍👧‍👦 : </label>
                             <div class="col-sm-9">
-                                <input type="number" class="form-control" name="cost" id="cost" placeholder="ยอดผู้ร่วมงาน">
+                                <input type="number" class="form-control" name="cost" id="cost" placeholder="จำนวนยอดผู้ร่วมงาน">
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="username" class="col-sm-3 col-form-label">ราคาต่อคน : </label>
+                            <label for="username" class="col-sm-3 col-form-label">ราคาต่อคน👮 : </label>
                             <div class="col-sm-9">
-                                <input type="number" class="form-control" name="username" id="username" placeholder="ราคาต่อคน">
+                                <input type="number" class="form-control" name="username" id="username" placeholder="ค่าจัดเลี้ยง ต่อ คน">
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="password" class="col-sm-3 col-form-label">เพิ่มอาหาร : </label>
+                            <label for="password" class="col-sm-3 col-form-label">เพิ่มอาหาร🍽 : </label>
                             <div class="col-sm-9">
-                                <input type="number" class="form-control" name="password" id="password" placeholder="เพิ่มรายการอาหาร">
+                                <input type="number" class="form-control" name="password" id="password" placeholder="ยอดเงิน:อาหารที่เพิ่ม">
                             </div>
                         </div>
                           <div class="form-group row">
-                            <label for="password" class="col-sm-3 col-form-label">เพิ่มเครื่องดื่ม : </label>
+                            <label for="password" class="col-sm-3 col-form-label">เพิ่มเครื่องดื่ม🥂 : </label>
                             <div class="col-sm-9">
-                                <input type="number" class="form-control" name="text3" id="text3" placeholder="เพิ่มรายการเครื่องดื่ม">
+                                <input type="number" class="form-control" name="text3" id="text3" placeholder="ยอดเงิน:เครื่องดื่มที่เพิ่ม">
                             </div>
                         </div>
                          <div class="form-group row">
-                            <label for="password" class="col-sm-3 col-form-label">ค่าใช้จ่ายอื่น ๆ : </label>
+                            <label for="password" class="col-sm-3 col-form-label">ค่าใช้จ่ายอื่น ๆ💰 : </label>
                             <div class="col-sm-9">
-                                <input type="number" class="form-control" name="text4" id="text4" placeholder="เพิ่มการบริการ">
+                                <input type="number" class="form-control" name="text4" id="text4" placeholder="ยอดเงิน:ค่าใช้จ่ายอื่น ๆ">
                             </div>
                         </div>
                          <div class="form-group row">
@@ -131,6 +143,8 @@
 
                     // เหตุการณ์กดปุ่ม Submit form login
                     $('button#login').click(function(){
+                        var contact = $('input#contact').val(); // รับค่า contact จากฟอร์ม
+			var tel = $('input#tel').val(); // รับค่า tel จากฟอร์ม			    
                         var cost = $('input#cost').val(); // รับค่า cost จากฟอร์ม
                         var username = $('input#username').val(); // รับค่า username จากฟอร์ม
                         var password = $('input#password').val(); // รับค่า password จากฟอร์ม
@@ -138,7 +152,9 @@
                         var text4 = $('input#text4').val(); // รับค่า text4 จากฟอร์ม
                         var out01 = Number(cost)*Number(username);
 			var out02 = Number(password)+Number(text3)+Number(text4);
-			var payment = Number(out01)+Number(out02);
+			var payment_ = Number(out01)+Number(out02);
+			var payment = (payment_).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');  // 12,345.67
+			var d = new Date();
 	                   
 	            
                         
@@ -147,7 +163,7 @@
                             // ส่ง username/password เข้าห้องแชท
                             liff.sendMessages([{
                                 'type': 'text',
-                                'text': ' 👨‍🍳ประมาณการค่าใช้จ่าย🎉'+'\n\nจำนวนคนผู้ใช้บริการ : '+cost+ '\nราคาต่อคน : '+username+ '\nเพิ่มอาหาร : '+password+ '\nเพิ่มเครื่องดื่ม : '+text3+ '\nค่าใช้จ่ายอื่น ๆ : '+text4+ '\nรวมเป็นเงิน : '+payment
+                                'text': ' 👨‍🍳ประมาณการค่าใช้จ่าย🎉'+'\n\nผู้ติดต่อ : '+contact+'\nเบอร์มือถือ : '+tel+'\n________________________'+'\n\nยอดผู้ใช้บริการ : '+cost+' คน'+ '\nราคาต่อคน : '+username+' บาท' +'\nเพิ่มอาหาร : '+password+' บาท' + '\nเพิ่มเครื่องดื่ม : '+text3+' บาท' + '\nค่าใช้จ่ายอื่น ๆ : '+text4+' บาท' +'\n________________________'+ '\nรวมเป็นเงิน : '+payment+' บาท'+'\n\n⏰ '+d
                             }]).then(function() {
                                 window.alert('Message sent');
                             }).catch(function(error) {
