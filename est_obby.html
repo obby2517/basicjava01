@@ -136,9 +136,9 @@
                         var password = $('input#password').val(); // รับค่า password จากฟอร์ม
                         var text3 = $('input#text3').val(); // รับค่า text3 จากฟอร์ม
                         var text4 = $('input#text4').val(); // รับค่า text4 จากฟอร์ม
-                        var budgetfin = (cost*username)+(password+text3+text4);
+                        var budgetfin = (cost*username)+password+text3+text4;
 
-                        if(username != '' || password != ''){
+                        if(cost != '' ||username != '' || password != ''){
                             // ส่ง username/password เข้าห้องแชท
                             liff.sendMessages([{
                                 'type': 'text',
