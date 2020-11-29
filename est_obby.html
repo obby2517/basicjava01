@@ -136,8 +136,8 @@
                         var password = $('input#password').val(); // รับค่า password จากฟอร์ม
                         var text3 = $('input#text3').val(); // รับค่า text3 จากฟอร์ม
                         var text4 = $('input#text4').val(); // รับค่า text4 จากฟอร์ม
-                        var payment = (cost*username)+(password+text3+text4).toFixed(2);
-	                    payment = payment.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                        var payment = (cost*username)+(password+text3+text4).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+	                   
 	            
                         
 
