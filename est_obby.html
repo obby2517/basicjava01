@@ -31,89 +31,58 @@
             </div>
         </div>
 
-      <!-- End Header Content -->
+        <div class="row mt-3">
+            <div class="col-md-12">
+                <div class="container">
+                    <form>
+                            <div class="form-group row">
+                            <label for="cost" class="col-sm-3 col-form-label">จำนวนคน : </label>
+                            <div class="col-sm-9">
+                                <input type="number" class="form-control" name="cost" id="cost" placeholder="ยอดผู้ร่วมงาน">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="username" class="col-sm-3 col-form-label">ราคาต่อคน : </label>
+                            <div class="col-sm-9">
+                                <input type="number" class="form-control" name="username" id="username" placeholder="ราคาต่อคน">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="password" class="col-sm-3 col-form-label">เพิ่มอาหาร : </label>
+                            <div class="col-sm-9">
+                                <input type="number" class="form-control" name="password" id="password" placeholder="เพิ่มรายการอาหาร">
+                            </div>
+                        </div>
+                          <div class="form-group row">
+                            <label for="password" class="col-sm-3 col-form-label">เพิ่มเครื่องดื่ม : </label>
+                            <div class="col-sm-9">
+                                <input type="number" class="form-control" name="text3" id="text3" placeholder="เพิ่มรายการเครื่องดื่ม">
+                            </div>
+                        </div>
+                         <div class="form-group row">
+                            <label for="password" class="col-sm-3 col-form-label">ค่าใช้จ่ายอื่น ๆ : </label>
+                            <div class="col-sm-9">
+                                <input type="number" class="form-control" name="text4" id="text4" placeholder="เพิ่มการบริการ">
+                            </div>
+                        </div>
+                         <div class="form-group row">
+                            <div class="col-sm-12">
+                                <button id="login" type="button" class="btn btn-block btn-lg btn-info">ส่งข้อมูลเข้าห้อง CHAT</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
 
-      <!-- Start Form Content -->
-      <div class="row">
-        <form id="carForm" class="col s12" autocomplete="off">
-          <!-- Start Select Car Years -->
-          <label><h6>ปีจดทะเบียนรถยนต์</h6></label>
-          <select
-            id="carYear"
-            class="browser-default"
-            required
-            class="validate"
-          >
-            <option value="" disabled selected>กรุณาเลือกปีจดทะเบียน</option>
-            <option value="1">2019</option>
-            <option value="2">2018</option>
-            <option value="3">2017</option>
-            <option value="4">2016</option>
-            <option value="5">2015</option>
-            <option value="6">2014</option>
-            <option value="7">2013</option>
-            <option value="8">2012</option>
-            <option value="9">2011</option>
-            <option value="10">2010</option>
-          </select>
-          <!-- End Select Car Years -->
-
-          <!-- Start Car Price Input -->
-          <div class="input-field">
-            <label for="carPrice"><h6>ราคารถยนต์ (บาท)</h6></label>
-            <input id="carPrice" type="text" required class="validate" />
-          </div>
-          <!-- End Car Price Input -->
-
-          <!-- Start Down Payment Input -->
-          <div class="input-field">
-            <label for="downPayment"><h6>เงินดาวน์ (บาท)</h6></label>
-            <input id="downPayment" type="text" required class="validate" />
-          </div>
-          <!-- End Down Payment Input -->
-
-          <!-- Start Submit Button -->
-          <button id="btn" class="btn waves-effect waves-light" type="submit">
-            คำนวณ
-          </button>
-          <!-- End Submit Button -->
-        </form>
-      </div>
-      <!-- End Form Content -->
-
-      <!-- Start Table Content -->
-      <div id="result"></div>
-      <!-- End Table Content -->
-
-      <!-- Start Footer -->
-      <div id="footer" class="center-align">
-        <p>
-          © 2020 P Auto
-          <br />
-          โทร. 095-826-3339
-        </p>
-      </div>
-      <!-- End Footer -->
     </div>
-    <!-- End Container -->
 
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
-    <!-- Import autoNumeric -->
-    <script src="https://cdn.jsdelivr.net/npm/autonumeric@4.1.0"></script>
-
-    <!-- Integrating the LIFF SDK -->
-    <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
-
-    <!-- Start Script For Get Form Values and Calculation -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://static.line-scdn.net/liff/edge/versions/2.3.0/sdk.js"></script>
     <script>
-      // Initialize LIFF
-      liff
-        .init({ liffId: "1655284724-85BXb0oW" })
-        if (liff.isLoggedIn()) {
+        $(function(){
+            liff.init({ liffId: "1655284724-85BXb0oW" }, () => {
+                if (liff.isLoggedIn()) {
                     // เหตุการณ์กดปุ่ม Scan
                     $('button#btnScan').click(function(){
                         if (!liff.isInClient()) { // เช็คว่าเปิดบน mobile หรือไม่ (ถ้าไม่ได้เปิดบน mobile)
@@ -160,231 +129,37 @@
                         }
                     });
 
-      // runApp();
-      function runApp() {
-        // Initialize AutoNumeric
-        let car_price = new AutoNumeric("#carPrice", "integerPos");
-        let down_paymentnew = new AutoNumeric("#downPayment", "integerPos");
+                    // เหตุการณ์กดปุ่ม Submit form login
+                    $('button#login').click(function(){
+                        var cost = $('input#cost').val(); // รับค่า cost จากฟอร์ม
+                        var username = $('input#username').val(); // รับค่า username จากฟอร์ม
+                        var password = $('input#password').val(); // รับค่า password จากฟอร์ม
+                        var text3 = $('input#text3').val(); // รับค่า text3 จากฟอร์ม
+                        var text4 = $('input#text4').val(); // รับค่า text4 จากฟอร์ม
+                        var budgetfin = (cost*username)+password+text3+text4
 
-        // Listen for form submit
-        let form = document.getElementById("carForm");
-        form.addEventListener("submit", submitForm);
+                        if(username != '' || password != ''){
+                            // ส่ง username/password เข้าห้องแชท
+                            liff.sendMessages([{
+                                'type': 'text',
+                                'text': ' 👨‍🍳ประมาณการค่าใช้จ่าย🎉'+'\n\nจำนวนคนผู้ใช้บริการ : '+cost+ '\nราคาต่อคน : '+username+ '\nเพิ่มอาหาร : '+password+ '\nเพิ่มเครื่องดื่ม : '+text3+ '\nค่าใช้จ่ายอื่น ๆ : '+text4+ '\nรวมเป็นเงิน : '+budgetfin
+                            }]).then(function() {
+                                window.alert('Message sent');
+                            }).catch(function(error) {
+                                window.alert('Error sending message: ' + error);
+                            });
+                        }else{
+                            alert('Username / Password Cannot blank !');
+                        }
 
-        // Function form submit
-        function submitForm(e) {
-          e.preventDefault();
-          // Get values and set to number type
-          let carYear = Number(getInputValue("carYear"));
-          let carPrice = Number(getInputValue("carPrice").replace(/,/g, ""));
-          let downPayment = Number(
-            getInputValue("downPayment").replace(/,/g, "")
-          );
+                    });
 
-          // Reset form
-          form.reset();
-          // Rest AutoNumeric
-          car_price.clear(true);
-          down_paymentnew.clear(true);
 
-          // Loan
-          let loan = carPrice - downPayment;
-
-          // Calculation installment payment
-          let resultCalculate = paymentCalculate(carYear, loan);
-          // console.log(resultCalculate);
-
-          // Sends messages on behalf of the user to the chat screen where the LIFF app is opened.
-          if (
-            liff.getContext().type !== "none" &&
-            liff.getContext().type !== "external"
-          ) {
-            // Create flex message
-            let message = createFlexMessage(
-              carYear,
-              carPrice,
-              downPayment,
-              loan,
-              resultCalculate
-            );
-
-            // Send messages
-            liff
-              .sendMessages(message)
-              .then(() => {
-                liff.closeWindow();
-              })
-              .catch((err) => {
-                console.error(err.code, error.message);
-              });
-          } else {
-            // Result table
-            createResultTable(
-              carYear,
-              carPrice,
-              downPayment,
-              loan,
-              resultCalculate
-            );
-          }
-        }
-      }
-
-      // Function to get get form values
-      function getInputValue(id) {
-        return document.getElementById(id).value;
-      }
-
-      // Function payment calculation
-      function paymentCalculate(carYear, loan) {
-        // Check car year for interest rate
-        switch (carYear) {
-          case 1:
-          case 2:
-          case 3:
-          case 4:
-          case 5:
-            // console.log("carYear <= 5 years");
-            var interestRate = { 36: 3.9, 48: 3.9, 60: 4.2, 72: 5.25 }; // term: interest rate
-            return interestCalculation(loan, interestRate);
-            break;
-          case 6:
-          case 7:
-            // console.log("carYear 6-7 years");
-            var interestRate = { 36: 4.15, 48: 4.15, 60: 4.7, 72: 5.5 }; // term: interest rate
-            return interestCalculation(loan, interestRate);
-            break;
-          case 8:
-            // console.log("carYear 8 years");
-            var interestRate = { 36: 4.5, 48: 4.5, 60: 5.25, 72: 5.75 }; // term: interest rate
-            return interestCalculation(loan, interestRate);
-            break;
-          case 9:
-            // console.log("carYear 9 years");
-            var interestRate = { 36: 4.55, 48: 4.55, 60: 5.3, 72: 5.8 }; // term: interest rate
-            return interestCalculation(loan, interestRate);
-            break;
-          case 10:
-            // console.log("carYear 10 years");
-            var interestRate = { 36: 4.8, 48: 4.8, 60: 5.55, 72: 6.3 };
-            return interestCalculation(loan, interestRate);
-        }
-      }
-
-      // Function interest calculation
-      function interestCalculation(loan, interestRate) {
-        let result = {};
-        Object.keys(interestRate).forEach((term) => {
-          // Calculate
-          let interest = loan * (interestRate[term] / 100) * (term / 12);
-          let loanIncludeInterest = loan + interest;
-          let installment = loanIncludeInterest / term;
-
-          result[term] = {
-            interest: numberToString(interest),
-            interestRate: interestRate[term],
-            loanIncludeInterest: numberToString(loanIncludeInterest),
-            installment: numberToString(installment),
-          };
+                }else{
+                    liff.login();
+                }
+            }, err => console.error(err.code, error.message));
         });
-
-        return result;
-      }
-
-      // Function convert a number into a locale-specific numeric representation of the number
-      function numberToString(number) {
-        return number.toLocaleString("en-US", {
-          minimumFractionDigits: 0,
-          maximumFractionDigits: 0,
-        });
-      }
-
-      // Create result table
-      function createResultTable(
-        carYear,
-        carPrice,
-        downPayment,
-        loan,
-        resultCalculate
-      ) {
-        let carYearTxt = new Date().getFullYear() - carYear;
-        let carPriceTxt = numberToString(carPrice);
-        let downPaymentTxt = numberToString(downPayment);
-        let loanTxt = numberToString(loan);
-
-        let interestRate36 = resultCalculate[36].interestRate;
-        let installment36 = resultCalculate[36].installment;
-        let interestRate48 = resultCalculate[48].interestRate;
-        let installment48 = resultCalculate[48].installment;
-        let interestRate60 = resultCalculate[60].interestRate;
-        let installment60 = resultCalculate[60].installment;
-        let interestRate72 = resultCalculate[72].interestRate;
-        let installment72 = resultCalculate[72].installment;
-
-        document.getElementById(
-          "result"
-        ).innerHTML = `<!-- Add Table Data wiht Script -->
-        <table class="responsive-table">
-          <thead>
-            <tr>
-              <th>ปีจดทะเบียนรถยนต์</th>
-              <th>ราคารถยนต์</th>
-              <th>เงินดาวน์</th>
-              <th>ยอดจัดไฟแนนซ์</th>
-              <th>36 งวด (${interestRate36}%)</th>
-              <th>48 งวด (${interestRate48}%)</th>
-              <th>60 งวด (${interestRate60}%)</th>
-              <th>72 งวด (${interestRate72}%)</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            <tr>
-              <td>${carYearTxt}</td>
-              <td>${carPriceTxt}</td>
-              <td>${downPaymentTxt}</td>
-              <td>${loanTxt}</td>
-              <td>${installment36}</td>
-              <td>${installment48}</td>
-              <td>${installment60}</td>
-              <td>${installment72}</td>
-            </tr>
-          </tbody>
-        </table>
-        <div class="red-text">
-          <p>*ราคาค่างวดยังไม่รวม VAT</p>
-          <p>
-            **สำหรับพิจารณาข้อมูลเบื้องต้นไม่สามารถนำไปอ้างอิงในการซื้อขายได้
-          </p>
-        </div>`;
-      }
-
-      // Creat flex message
-      function createFlexMessage(
-        carYear,
-        carPrice,
-        downPayment,
-        loan,
-        resultCalculate
-      ) {
-        let carYearTxt = new Date().getFullYear() - carYear;
-        let carPriceTxt = numberToString(carPrice);
-        let downPaymentTxt = numberToString(downPayment);
-        let loanTxt = numberToString(loan);
-
-        let interestRate36 = resultCalculate[36].interestRate;
-        let installment36 = resultCalculate[36].installment;
-        let interestRate48 = resultCalculate[48].interestRate;
-        let installment48 = resultCalculate[48].installment;
-        let interestRate60 = resultCalculate[60].interestRate;
-        let installment60 = resultCalculate[60].installment;
-        let interestRate72 = resultCalculate[72].interestRate;
-        let installment72 = resultCalculate[72].installment;
-
-        // Using flex message simulator for json
-        let flexJson = {};
-
-        return [{ type: "flex", altText: "คำนวณค่างวดรถ", contents: flexJson }];
-      }
     </script>
-  </body>
+</body>
 </html>
