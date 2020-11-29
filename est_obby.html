@@ -136,7 +136,9 @@
                         var password = $('input#password').val(); // รับค่า password จากฟอร์ม
                         var text3 = $('input#text3').val(); // รับค่า text3 จากฟอร์ม
                         var text4 = $('input#text4').val(); // รับค่า text4 จากฟอร์ม
-                        var payment = ((cost*username)+(password+text3+text4))*1;
+                        var out01 = Number(cost)*Number(username)
+			var out02 = Number(password)+Number(text3)+Number(text4)
+			var payment = Number(out01)+Number(out02);
 	                   
 	            
                         
