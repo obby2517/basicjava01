@@ -113,12 +113,52 @@
       // Initialize LIFF
       liff
         .init({ liffId: "1655284724-85BXb0oW" })
-        .then(() => {
-          runApp();
-        })
-        .catch((err) => {
-          console.error(err.code, error.message);
-        });
+        if (liff.isLoggedIn()) {
+                    // เหตุการณ์กดปุ่ม Scan
+                    $('button#btnScan').click(function(){
+                        if (!liff.isInClient()) { // เช็คว่าเปิดบน mobile หรือไม่ (ถ้าไม่ได้เปิดบน mobile)
+                            alert('ต้องเปิดบนมือถือเท่านั้น');
+                        }else{
+                            if (liff.scanCode) {
+                                liff.scanCode().then(result => {
+
+                                    // alert(JSON.stringify(result));
+                                    var obj = JSON.parse(JSON.stringify(result));
+                                    $('#scan_result').html(obj.value);
+                                    
+                                    // ส่ง messeage เข้าห้องแชท
+                                    liff.sendMessages([{
+                                        'type': 'text',
+                                        'text': obj.value
+                                    }]).then(function() {
+                                        window.alert('Message sent');
+                                    }).catch(function(error) {
+                                        window.alert('Error sending message: ' + error);
+                                    });
+                            
+
+                                }).catch(err => {
+                                    alert('scanCode failed!')
+                                });
+                            }
+                        }
+                    });
+
+                    // เหตุการณ์กดปุ่ม send message
+                    $('button#btnSendMessage').click(function(){
+                        if (!liff.isInClient()) { // เช็คว่าเปิดบน mobile หรือไม่ (ถ้าไม่ได้เปิดบน mobile)
+                            alert('ต้องเปิดบนมือถือเท่านั้น');
+                        }else{
+                            liff.sendMessages([{
+                                'type': 'text',
+                                'text': "สวัสดี"
+                            }]).then(function() {
+                                window.alert('Message sent');
+                            }).catch(function(error) {
+                                window.alert('Error sending message: ' + error);
+                            });
+                        }
+                    });
 
       // runApp();
       function runApp() {
