@@ -17,7 +17,7 @@
   <script>
     async function sendShare() {
       const result = await liff.shareTargetPicker([
-        {
+    {
   "type": "bubble",
   "body": {
     "type": "box",
@@ -50,10 +50,7 @@
       }
     ]
   }
-
-          }
-        }
-      ])
+}
       if (result) {
         alert(`[${result.status}] Message sent!`)
       } else {
