@@ -18,101 +18,39 @@
     async function sendShare() {
       const result = await liff.shareTargetPicker([
         {
-          "type": "flex",
-          "altText": "Flex Message",
-          "contents": {
-            "type": "bubble",
-            "body": {
-              "type": "box",
-              "layout": "vertical",
-              "spacing": "md",
-              "contents": [
-                {
-                  "type": "text",
-                  "text": "BROWN'S ADVENTURE",
-                  "size": "xl",
-                  "gravity": "center",
-                  "weight": "bold",
-                  "wrap": true
-                },
-                {
-                  "type": "box",
-                  "layout": "vertical",
-                  "spacing": "sm",
-                  "margin": "lg",
-                  "contents": [
-                    {
-                      "type": "box",
-                      "layout": "baseline",
-                      "spacing": "sm",
-                      "contents": [
-                        {
-                          "type": "text",
-                          "text": "Date",
-                          "flex": 1,
-                          "size": "sm",
-                          "color": "#AAAAAA"
-                        },
-                        {
-                          "type": "text",
-                          "text": "Monday 25, 9:00PM",
-                          "flex": 4,
-                          "size": "sm",
-                          "color": "#666666",
-                          "wrap": true
-                        }
-                      ]
-                    },
-                    {
-                      "type": "box",
-                      "layout": "baseline",
-                      "spacing": "sm",
-                      "contents": [
-                        {
-                          "type": "text",
-                          "text": "Place",
-                          "flex": 1,
-                          "size": "sm",
-                          "color": "#AAAAAA"
-                        },
-                        {
-                          "type": "text",
-                          "text": "LINE Thailand",
-                          "flex": 4,
-                          "size": "sm",
-                          "color": "#666666",
-                          "wrap": true
-                        }
-                      ]
-                    },
-                    {
-                      "type": "box",
-                      "layout": "vertical",
-                      "margin": "xxl",
-                      "contents": [
-                        {
-                          "type": "spacer"
-                        },
-                        {
-                          "type": "image",
-                          "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/linecorp_code_withborder.png",
-                          "size": "xl",
-                          "aspectMode": "cover"
-                        },
-                        {
-                          "type": "text",
-                          "text": "You can enter the theater by using this code instead of a ticket",
-                          "margin": "xxl",
-                          "size": "xs",
-                          "color": "#AAAAAA",
-                          "wrap": true
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
+  "type": "bubble",
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1513689125086-6c432170e843?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80",
+        "size": "full",
+        "animated": false,
+        "position": "relative"
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "uri",
+          "label": "ืแชร์ให้คนที่คุณรัก...สิคะ",
+          "uri": "https://liff.line.me/1655301964-7NqwbMB3"
+        },
+        "style": "primary"
+      },
+      {
+        "type": "text",
+        "text": "เราจะยิ้มให้กัน 😁",
+        "position": "relative",
+        "align": "center",
+        "wrap": true,
+        "adjustMode": "shrink-to-fit",
+        "weight": "bold"
+      }
+    ]
+  }
+}
           }
         }
       ])
