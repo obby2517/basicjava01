@@ -17,7 +17,7 @@
   <script>
     async function sendShare() {
       const result = await liff.shareTargetPicker([
-    {
+  {
   "type": "bubble",
   "body": {
     "type": "box",
@@ -34,7 +34,7 @@
         "type": "button",
         "action": {
           "type": "uri",
-          "label": "ืแชร์ให้คนที่คุณรัก...สิคะ",
+          "label": "แชร์ให้คนที่คุณรัก...สิคะ",
           "uri": "https://liff.line.me/1655301964-7NqwbMB3"
         },
         "style": "primary"
@@ -51,6 +51,9 @@
     ]
   }
 }
+        ]
+        )
+      }
       if (result) {
         alert(`[${result.status}] Message sent!`)
       } else {
