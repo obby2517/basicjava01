@@ -169,9 +169,9 @@ function myFunction(x) {
 			var out01_ = (out01).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');  // 12,345.67
 			    
 			var perman = Number(username)/Number(cost);  
-			var out01 = Number(cost)*Number(perman);
+			var perman2 = Number(perman)*Number(cost);
 			    
-			var payment_ = Number(out01)+Number(out02);
+			var payment_ = Number(perman2)+Number(out02);
 			var payment = (payment_).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');  // 12,345.67
 			var strWeek = ["อาทิตย์", "จันทร์", "อังคาร", "พุธ", "พฤหัสบดี", "ศุกร์", "เสาร์"]; //function หาวันในสัปดาห์
                         var strMonthFull = ["มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", "มิถุนายน", "กรกฎาคม", "สิงหาคม", "กันยายน", "ตุลาคม", "พฤศจิกายน", "ธันวาคม"]; //ฟังก์ชันเดือน
