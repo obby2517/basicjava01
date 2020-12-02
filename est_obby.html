@@ -63,19 +63,19 @@ function myFunction(x) {
                         <div class="form-group row">
                             <label for="username" class="col-sm-3 col-form-label">ค่าอาหารและเครื่องดื่ม💵 : </label>
                             <div class="col-sm-9">
-                                <input type="number" class="form-control" name="username" id="username" placeholder="ค่าอาหารและเครื่องดื่ม" >
+                                <input type="number" class="form-control" name="username" id="username" placeholder="ค่าอาหารและเครื่องดื่ม" onfocus="myFunction(username)">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="password" class="col-sm-3 col-form-label">เพิ่มอาหาร🍽 : </label>
                             <div class="col-sm-9">
-                                <input type="number" class="form-control" name="password" id="password" placeholder="ยอดเงิน:อาหารที่เพิ่ม" >
+                                <input type="number" class="form-control" name="password" id="password" placeholder="ยอดเงิน:อาหารที่เพิ่ม" onfocus="myFunction(password)">
                             </div>
                         </div>
                           <div class="form-group row">
                             <label for="password" class="col-sm-3 col-form-label">เพิ่มเครื่องดื่ม🥂 : </label>
                             <div class="col-sm-9">
-                                <input type="number" class="form-control" name="text3" id="text3" placeholder="ยอดเงิน:เครื่องดื่มที่เพิ่ม" >
+                                <input type="number" class="form-control" name="text3" id="text3" placeholder="ยอดเงิน:เครื่องดื่มที่เพิ่ม" onfocus="myFunction(text3)">
                             </div>
                         </div>
                          <div class="form-group row">
@@ -168,8 +168,8 @@ function myFunction(x) {
 			var out01_ = Number(out01).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');  // 12,345.67
 			var out02 = Number(password_)+Number(text3_)+Number(text4_);
 			    
-			var payment_ = (Number(out01)*Number(cost_)+Number(out02);
-			var payment = Number(payment_).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');  // 12,345.67
+			var payment_ = Number(out01)*Number(cost_)+Number(out02);
+			var payment = payment_.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');  // 12,345.67
 			var strWeek = ["อาทิตย์", "จันทร์", "อังคาร", "พุธ", "พฤหัสบดี", "ศุกร์", "เสาร์"]; //function หาวันในสัปดาห์
                         var strMonthFull = ["มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", "มิถุนายน", "กรกฎาคม", "สิงหาคม", "กันยายน", "ตุลาคม", "พฤศจิกายน", "ธันวาคม"]; //ฟังก์ชันเดือน
                         var  d = new Date(); //กำหนด d เก็บวันที่วันนี้
