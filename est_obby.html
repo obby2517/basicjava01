@@ -1,6 +1,11 @@
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+<script>
+function myFunction(x) {
+  x.style.background = "yellow";
+}
+</script>
+<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ประมาณการค่าใช้จ่าย</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -39,7 +44,7 @@
 		            <div class="form-group row">
                             <label for="contact" class="col-sm-3 col-form-label">ผู้ติดต่อ(ชื่อ สกุล/หน่วยงาน)👮 : </label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" name="contact" id="contact" placeholder="ชื่อ สกุล" >
+                                <input type="text" class="form-control" name="contact" id="contact" placeholder="ชื่อ สกุล" onfocus="myFunction(contact)">
                             </div>
                         </div>
 			    <div class="form-group row">
