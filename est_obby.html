@@ -1,5 +1,20 @@
 <html lang="en">
 <head>
+	<script>
+function Comma(Num)
+ {
+       Num += '';
+       Num = Num.replace(/,/g, '');
+
+       x = Num.split('.');
+       x1 = x[0];
+       x2 = x.length > 1 ? '.' + x[1] : '';
+       var rgx = /(\d+)(\d{3})/;
+       while (rgx.test(x1))
+       x1 = x1.replace(rgx, '$1' + ',' + '$2');
+       return x1 + x2;
+ } 
+</script>
 <script>
 function myFunction(x) {
   x.style.background = "yellow";
@@ -80,7 +95,7 @@ function myFunction(x) {
                          <div class="form-group row">
                             <label for="password" class="col-sm-3 col-form-label">ค่าใช้จ่ายอื่น ๆ💰 : </label>
                             <div class="col-sm-9">
-                                <input type="number" class="form-control" name="text4" id="text4" placeholder="ยอดเงิน:ค่าใช้จ่ายอื่น ๆ" onfocus="myFunction(text4)" >
+                                <input type="text" class="form-control" name="text4" id="text4" placeholder="ยอดเงิน:ค่าใช้จ่ายอื่น ๆ" onfocus="myFunction(text4)" onkeyup="this.value=Comma(this.value);" />
                             </div>
                         </div>
                          <div class="form-group row">
