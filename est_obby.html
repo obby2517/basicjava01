@@ -167,7 +167,7 @@ function myFunction(x) {
 			var out01 = Number(username)/Number(cost);
 			var out01_ = out01.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');  // 12,345.67
 			var out02 = Number(password_)+Number(text3_)+Number(text4_);
-			var out03 =    Number(out01)*Number(cost)
+			var out03 =  Number(out01)*Number(cost);
 			var payment_ = Number(out03)+Number(out02);
 			var payment = (payment_).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');  // 12,345.67
 			var strWeek = ["อาทิตย์", "จันทร์", "อังคาร", "พุธ", "พฤหัสบดี", "ศุกร์", "เสาร์"]; //function หาวันในสัปดาห์
