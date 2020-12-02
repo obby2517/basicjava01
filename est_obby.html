@@ -185,7 +185,11 @@ function myFunction(x) {
                         var yearcur =d.getFullYear()+543; //เพิ่มปี ค.ศ. ให้เป็น พ.ศ.
                         var TimeHours = d.getHours();//เวลาชั่วโมง
                         var TimeMiutes = d.getMinutes(); //เวลานาที			    
-                        var msg ="วัน"+curweek+ "ที่ " +curdate+ ' ' +MonthId+ ' พ.ศ. ' +yearcur+'\nเวลา '+TimeHours+':'+TimeMiutes
+			var date = Utilities.formatDate(new Date(), 'GMT+7', 'dd/MM/yyy,hh:mm')//วันที่
+                        
+			
+			
+                        var msg ="วัน"+curweek+ "ที่ " +curdate+ ' ' +MonthId+ ' พ.ศ. ' +yearcur+'\n timestamp '+date
 	                   
 	            
                         
