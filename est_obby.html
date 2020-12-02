@@ -169,7 +169,7 @@ function myFunction(x) {
 			
 			    
 			var perman = Number(username)/Number(cost);  
-			var perman_ = (perman).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');  // 12,345.67   
+			var perman_ = Number(perman).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');  // 12,345.67   
 			var perman2 = Number(perman)*Number(cost);
 			    
 			var payment_ = Number(perman2)+Number(out02);
