@@ -1,20 +1,6 @@
 <html lang="en">
 <head>
-	<script>
-function Comma(Num)
- {
-       Num += '';
-       Num = Num.replace(/,/g, '');
-
-       x = Num.split('.');
-       x1 = x[0];
-       x2 = x.length > 1 ? '.' + x[1] : '';
-       var rgx = /(\d+)(\d{3})/;
-       while (rgx.test(x1))
-       x1 = x1.replace(rgx, '$1' + ',' + '$2');
-       return x1 + x2;
- } 
-</script>
+	
 <script>
 function myFunction(x) {
   x.style.background = "yellow";
@@ -71,31 +57,31 @@ function myFunction(x) {
                             <div class="form-group row">
                             <label for="cost" class="col-sm-3 col-form-label">จำนวนคน👩‍👩‍👧‍👦 : </label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" name="cost" id="cost" placeholder="จำนวนยอดผู้ร่วมงาน" onfocus="myFunction(cost)" onkeyup="this.value=Comma(this.value);" />
+                                <input type="number" class="form-control" name="cost" id="cost" placeholder="จำนวนยอดผู้ร่วมงาน" onfocus="myFunction(cost)" >
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="username" class="col-sm-3 col-form-label">ค่าอาหารและเครื่องดื่ม💵 : </label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" name="username" id="username" placeholder="ค่าอาหารและเครื่องดื่ม" onfocus="myFunction(username)" onkeyup="this.value=Comma(this.value);" />
+                                <input type="number" class="form-control" name="username" id="username" placeholder="ค่าอาหารและเครื่องดื่ม" >
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="password" class="col-sm-3 col-form-label">เพิ่มอาหาร🍽 : </label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" name="password" id="password" placeholder="ยอดเงิน:อาหารที่เพิ่ม" onfocus="myFunction(password)" onkeyup="this.value=Comma(this.value);" />
+                                <input type="number" class="form-control" name="password" id="password" placeholder="ยอดเงิน:อาหารที่เพิ่ม" >
                             </div>
                         </div>
                           <div class="form-group row">
                             <label for="password" class="col-sm-3 col-form-label">เพิ่มเครื่องดื่ม🥂 : </label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" name="text3" id="text3" placeholder="ยอดเงิน:เครื่องดื่มที่เพิ่ม" onfocus="myFunction(text3)" onkeyup="this.value=Comma(this.value);" />
+                                <input type="number" class="form-control" name="text3" id="text3" placeholder="ยอดเงิน:เครื่องดื่มที่เพิ่ม" >
                             </div>
                         </div>
                          <div class="form-group row">
                             <label for="password" class="col-sm-3 col-form-label">ค่าใช้จ่ายอื่น ๆ💰 : </label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" name="text4" id="text4" placeholder="ยอดเงิน:ค่าใช้จ่ายอื่น ๆ" onfocus="myFunction(text4)" onkeyup="this.value=Comma(this.value);" />
+                                <input type="number" class="form-control" name="text4" id="text4" placeholder="ยอดเงิน:ค่าใช้จ่ายอื่น ๆ" onfocus="myFunction(text4)" >
                             </div>
                         </div>
                          <div class="form-group row">
@@ -178,11 +164,11 @@ function myFunction(x) {
                         var text3_ = Number(text3).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');  // 12,345.67
                         var text4_ = Number(text4).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');  // 12,345.67
        
-			var out01 = Number(username_/cost_);
+			var out01 = Number(username_)/Number(cost_);
 			var out01_ = Number(out01).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');  // 12,345.67
-			var out02 = Number(password_+text3_+text4_);
+			var out02 = Number(password_)+Number(text3_)+Number(text4_);
 			    
-			var payment_ = (Number(out01*cost_)+Number(out02);
+			var payment_ = (Number(out01)*Number(cost_)+Number(out02);
 			var payment = Number(payment_).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');  // 12,345.67
 			var strWeek = ["อาทิตย์", "จันทร์", "อังคาร", "พุธ", "พฤหัสบดี", "ศุกร์", "เสาร์"]; //function หาวันในสัปดาห์
                         var strMonthFull = ["มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", "มิถุนายน", "กรกฎาคม", "สิงหาคม", "กันยายน", "ตุลาคม", "พฤศจิกายน", "ธันวาคม"]; //ฟังก์ชันเดือน
