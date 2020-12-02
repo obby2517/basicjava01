@@ -164,11 +164,12 @@ function myFunction(x) {
                         var text3_ = Number(text3).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');  // 12,345.67
                         var text4_ = Number(text4).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');  // 12,345.67
        
-			var out01 = Number(cost)*Number(username);
+			
 			var out02 = Number(password)+Number(text3)+Number(text4);
 			var out01_ = (out01).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');  // 12,345.67
 			    
 			var perman = Number(username)/Number(cost);  
+			var out01 = Number(cost)*Number(perman);
 			    
 			var payment_ = Number(out01)+Number(out02);
 			var payment = (payment_).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');  // 12,345.67
