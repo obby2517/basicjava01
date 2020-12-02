@@ -4,21 +4,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ประมาณการค่าใช้จ่าย</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-<SCRIPT LANGUAGE="JavaScript">
-function Comma(Num)
- {
-       Num += '';
-       Num = Num.replace(/,/g, '');
-
-       x = Num.split('.');
-       x1 = x[0];
-       x2 = x.length > 1 ? '.' + x[1] : '';
-       var rgx = /(\d+)(\d{3})/;
-       while (rgx.test(x1))
-       x1 = x1.replace(rgx, '$1' + ',' + '$2');
-       return x1 + x2;
- } 
-</script>
 
 	</head>
 <body>
@@ -66,7 +51,7 @@ function Comma(Num)
                             <div class="form-group row">
                             <label for="cost" class="col-sm-3 col-form-label">จำนวนคน👩‍👩‍👧‍👦 : </label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" name="cost" id="cost" placeholder="จำนวนยอดผู้ร่วมงาน" onkeyup="cost=Comma(cost);">
+                                <input type="number" class="form-control" name="cost" id="cost" placeholder="จำนวนยอดผู้ร่วมงาน">
                             </div>
                         </div>
                         <div class="form-group row">
