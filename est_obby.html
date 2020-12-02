@@ -164,12 +164,12 @@ function myFunction(x) {
                         var text3_ = Number(text3).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');  // 12,345.67
                         var text4_ = Number(text4).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');  // 12,345.67
        
-			var out01 = Number(username)/Number(cost);
-			var out01_ = out01.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');  // 12,345.67
-			var out02 = Number(password_)+Number(text3_)+Number(text4_);
-			var out03 =  out01.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')*Number(cost);
-			var payment_ = Number(out03)+Number(out02);
-			var payment = payment_.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');  // 12,345.67
+			var out01 = Number(cost)*Number(username);
+			var out02 = Number(password)+Number(text3)+Number(text4);
+			var out01_ = (out01).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');  // 12,345.67
+			    
+			var payment_ = Number(out01)+Number(out02);
+			var payment = (payment_).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');  // 12,345.67
 			var strWeek = ["อาทิตย์", "จันทร์", "อังคาร", "พุธ", "พฤหัสบดี", "ศุกร์", "เสาร์"]; //function หาวันในสัปดาห์
                         var strMonthFull = ["มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", "มิถุนายน", "กรกฎาคม", "สิงหาคม", "กันยายน", "ตุลาคม", "พฤศจิกายน", "ธันวาคม"]; //ฟังก์ชันเดือน
                         var  d = new Date(); //กำหนด d เก็บวันที่วันนี้
