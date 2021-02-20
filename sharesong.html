@@ -11,7 +11,7 @@
       async function main() {
       await liff.init({ liffId: "1655687158-l7Z23wxw" })
       await liff.shareTargetPicker([
-        {
+       {
           type: "flex",
           altText: "Flex message From Share Target Picker",
           contents:{
@@ -39,7 +39,26 @@
       },
       {
         "type": "text",
-        "text": "อิอิ....😁",
+        "text": "ผ่อนคลายกับเสียงเพลง 🎧",
+        "position": "relative",
+        "align": "center",
+        "wrap": true,
+        "adjustMode": "shrink-to-fit",
+        "weight": "bold"
+      }, 
+      {
+        "type": "button",
+        "action": {
+          "type": "uri",
+          "label": "รวมเพลงบรรเลง",
+          "uri": "https://www.youtube.com/playlist?list=PLnS_jUdml82dGX6pyNJC9IOPjbYkMxpyQ"
+        },
+        "style": "primary",
+        "color": "#FF33D0"
+      },
+      {
+        "type": "text",
+        "text": "   ",
         "position": "relative",
         "align": "center",
         "wrap": true,
