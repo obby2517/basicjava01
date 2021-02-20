@@ -15,69 +15,79 @@
           type: "flex",
           altText: "Flex message From Share Target Picker",
           contents:{
-  "type": "carousel",
-  "contents": [
-    {
-      "type": "bubble",
-      "size": "micro",
-      "hero": {
-        "type": "image",
-        "url": "https://i.pinimg.com/474x/9c/de/b2/9cdeb2f415aa69d8ca00fce2a1d03322.jpg",
-        "size": "full",
-        "aspectMode": "cover",
-        "aspectRatio": "320:320",
-        "action": {
-          "type": "uri",
-          "label": "action",
-          "uri": "https://www.youtube.com/playlist?list=PLnS_jUdml82dGX6pyNJC9IOPjbYkMxpyQ"
-        }
+  "type": "bubble",
+  "header": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": []
+  },
+  "hero": {
+    "type": "image",
+    "url": "https://res.cloudinary.com/dwk1pevup/image/upload/v1590312122/%E0%B8%87%E0%B8%B2%E0%B8%99%E0%B8%AD%E0%B8%AD%E0%B8%81%E0%B9%81%E0%B8%9A%E0%B8%9A%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B8%A1%E0%B8%B5%E0%B8%8A%E0%B8%B7%E0%B9%88%E0%B8%AD_ut04ww.jpg"
+  },
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "text",
+        "text": "Jarayut  Putthi",
+        "margin": "xs",
+        "position": "relative",
+        "align": "center",
+        "weight": "bold"
       },
-      "body": {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "text",
-            "text": "คลิก ฟังเพลง",
-            "weight": "bold",
-            "size": "sm",
-            "wrap": true
-          },
-          {
-            "type": "box",
-            "layout": "horizontal",
-            "contents": [
-              {
-                "type": "box",
-                "layout": "baseline",
-                "spacing": "sm",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "แชร์ให้เพื่อน",
-                    "wrap": true,
-                    "color": "#801500",
-                    "size": "xs",
-                    "flex": 5
-                  }
-                ]
-              }
-            ],
-            "alignItems": "center",
-            "justifyContent": "center",
-            "position": "relative"
-          }
-        ],
-        "spacing": "sm",
-        "paddingAll": "13px",
+      {
+        "type": "text",
+        "text": "รองผู้อำนวยการกอง",
+        "align": "center"
+      },
+      {
+        "type": "button",
         "action": {
           "type": "uri",
-          "label": "action",
-          "uri": "https://liff.line.me/1655687158-l7Z23wxw"
-        }
+          "label": "website",
+          "uri": "https://sites.google.com/view/obbystyle/%E0%B8%AB%E0%B8%99%E0%B8%B2%E0%B9%81%E0%B8%A3%E0%B8%81?authuser=0"
+        },
+        "style": "primary",
+        "height": "sm",
+        "color": "#DE3163"
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "uri",
+          "label": "Call Us Now",
+          "uri": "tel:0832961444"
+        },
+        "style": "secondary",
+        "color": "#6495ED",
+        "height": "sm"
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "uri",
+          "label": "UserId",
+          "uri": "https://liff.line.me/1654920550-RwX05aBm"
+        },
+        "color": "#40E0D0",
+        "style": "secondary",
+        "gravity": "bottom",
+        "height": "sm"
       }
+    ],
+    "action": {
+      "type": "message",
+      "label": "action",
+      "text": "hello"
     }
-  ]
+  },
+  "styles": {
+    "header": {
+      "backgroundColor": "#00B900"
+    }
+  }
 }
         }  
       ])
