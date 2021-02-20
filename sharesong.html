@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
+  <title>LIFF App</title>
+</head>
+<body>
+  <script src="https://static.line-scdn.net/liff/edge/versions/2.5.0/sdk.js"></script>
+  <script>
+      async function main() {
+      await liff.init({ liffId: "1655301964-7NqwbMB3" })
+      await liff.shareTargetPicker([
+        {
+          type: "flex",
+          altText: "Flex message From Share Target Picker",
+          contents:{
+  "type": "bubble",
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "image",
+        "url": "https://sv1.picz.in.th/images/2021/02/20/oD0baZ.jpg",
+        "size": "full",
+        "animated": false,
+        "position": "relative"
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "uri",
+          "label": "คลิกเพื่อฟังเพลง",
+          "uri": "https://youtu.be/Poy_ivO3naQ"
+        },
+        "style": "primary",
+        "color": "#FF33D0"
+      },
+      {
+        "type": "text",
+        "text": "ผ่อนคลายกับเสียงเพลง 🎧",
+        "position": "relative",
+        "align": "center",
+        "wrap": true,
+        "adjustMode": "shrink-to-fit",
+        "weight": "bold"
+      }, 
+      {
+        "type": "button",
+        "action": {
+          "type": "uri",
+          "label": "รวมเพลงบรรเลง",
+          "uri": "https://www.youtube.com/playlist?list=PLnS_jUdml82dGX6pyNJC9IOPjbYkMxpyQ"
+        },
+        "style": "primary",
+        "color": "#FF33D0"
+      },
+      {
+        "type": "text",
+        "text": "   ",
+        "position": "relative",
+        "align": "center",
+        "wrap": true,
+        "adjustMode": "shrink-to-fit",
+        "weight": "bold"
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "uri",
+          "label": "แชร์วนไปคะ",
+          "uri": "https://liff.line.me/1655301964-7NqwbMB3"
+        },
+        "style": "primary"
+      }
+    ]
+  }
+}
+        }
+      ])
+      liff.closeWindow()
+        }
+    main()
+  </script>
+</body>
+</html>
