@@ -185,7 +185,7 @@ function myFunction(x) {
 	            
                         
 
-                        if(cost != '' ||username != '' || password != ''){
+                        if(tel != '' ||contact != '' || tel != ''){
                             // ส่ง username/password เข้าห้องแชท
                             liff.sendMessages([{
                                 'type': 'text',
@@ -196,7 +196,7 @@ function myFunction(x) {
                                 window.alert('Error sending message: ' + error);
                             });
                         }else{
-                            alert('Username / Password Cannot blank !');
+                            alert('contact / tel Cannot blank !');
                         }
 
                     });
