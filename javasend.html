@@ -60,48 +60,57 @@ function myFunction(x) {
  					 <input type="radio" id="contact" name="contact" value="ป3" >
   				<label for="ป3">ป3</label>
 					</div>
+                                  <div>
+					  <input type="radio" id="contact" name="contact" value="น1" >
+				  <label for="น1">น1</label>
+					</div>
 
+					<div>
+ 					 <input type="radio" id="contact" name="contact" value="น2" >
+  				<label for="น2">น2</label>
+					</div>
+				     <div>
+					  <input type="radio" id="contact" name="contact" value="น3" >
+				  <label for="น3">น3</label>
+					</div>
+
+					<div>
+ 					 <input type="radio" id="contact" name="contact" value="น4" >
+  				<label for="น4">น4</label>
+					</div>
+				     <div>
+					  <input type="radio" id="contact" name="contact" value="น5" >
+				  <label for="น5">น5</label>
+					</div>
+
+					<div>
+ 					 <input type="radio" id="contact" name="contact" value="น6" >
+  				<label for="น6">น6</label>
+					</div>
 				    
-				    
+				     <div>
+					  <input type="radio" id="contact" name="contact" value="น7" >
+				  <label for="น7">น7</label>
+					</div>
+
+					<div>
+ 					 <input type="radio" id="contact" name="contact" value="น8" >
+  				<label for="น8">น8</label>
+					</div>
+				    <div>
+ 					 <input type="radio" id="contact" name="contact" value="น9" >
+  				<label for="น9">น9</label>
+					</div>
 				   
                             </div>
                         </div>
 			    <div class="form-group row">
-                            <label for="tel" class="col-sm-3 col-form-label">เบอร์โทรศัพท์☎️ : </label>
+                            <label for="tel" class="col-sm-3 col-form-label">ชั้น การกรอก ดังนี้(0.5 หรือ 14.0 หรือ 14.5 ) : </label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" name="tel" id="tel" placeholder="เบอร์มือถือ" onfocus="myFunction(tel)">
+                                <input type="number" class="form-control" name="tel" id="tel" placeholder="กรอกตัวเลขและจุดทศนิยม" onfocus="myFunction(tel)">
                             </div>
                         </div>
-                            <div class="form-group row">
-                            <label for="cost" class="col-sm-3 col-form-label">จำนวนคน👩‍👩‍👧‍👦 : </label>
-                            <div class="col-sm-9">
-                                <input type="number" class="form-control" name="cost" id="cost" placeholder="จำนวนยอดผู้ร่วมงาน" onfocus="myFunction(cost)" >
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="username" class="col-sm-3 col-form-label">ค่าอาหารและเครื่องดื่ม💵 : </label>
-                            <div class="col-sm-9">
-                                <input type="number" class="form-control" name="username" id="username" placeholder="งบประมาณค่าอาหารและเครื่องดื่ม" onfocus="myFunction(username)">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="password" class="col-sm-3 col-form-label">เพิ่มอาหาร🍽 : </label>
-                            <div class="col-sm-9">
-                                <input type="number" class="form-control" name="password" id="password" placeholder="ยอดเงิน:อาหารที่เพิ่ม" onfocus="myFunction(password)">
-                            </div>
-                        </div>
-                          <div class="form-group row">
-                            <label for="password" class="col-sm-3 col-form-label">เพิ่มเครื่องดื่ม🥂 : </label>
-                            <div class="col-sm-9">
-                                <input type="number" class="form-control" name="text3" id="text3" placeholder="ยอดเงิน:เครื่องดื่มที่เพิ่ม" onfocus="myFunction(text3)">
-                            </div>
-                        </div>
-                         <div class="form-group row">
-                            <label for="password" class="col-sm-3 col-form-label">ค่าใช้จ่ายอื่น ๆ💰 : </label>
-                            <div class="col-sm-9">
-                                <input type="number" class="form-control" name="text4" id="text4" placeholder="ยอดเงิน:ค่าใช้จ่ายอื่น ๆ" onfocus="myFunction(text4)" >
-                            </div>
-                        </div>
+                        
                          <div class="form-group row">
                             <div class="col-sm-12">
                                 <button id="login" type="button" class="btn btn-block btn-lg btn-info">ส่งข้อมูลเข้าห้อง CHAT</button>
@@ -170,41 +179,9 @@ function myFunction(x) {
                     $('button#login').click(function(){
                         var contact = $('input#contact').val(); // รับค่า contact จากฟอร์ม
 			var tel = $('input#tel').val(); // รับค่า tel จากฟอร์ม			    
-                        var cost = $('input#cost').val(); // รับค่า cost จากฟอร์ม
-                        var username = $('input#username').val(); // รับค่า username จากฟอร์ม
-                        var password = $('input#password').val(); // รับค่า password จากฟอร์ม
-                        var text3 = $('input#text3').val(); // รับค่า text3 จากฟอร์ม
-                        var text4 = $('input#text4').val(); // รับค่า text4 จากฟอร์ม
-			    
-                        var cost_ = Number(cost).toFixed().replace(/\d(?=(\d{3})+\.)/g, '$&,');  // 12,345.67
-                        var username_ = Number(username).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');  // 12,345.67
-                        var password_ = Number(password).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');  // 12,345.67
-                        var text3_ = Number(text3).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');  // 12,345.67
-                        var text4_ = Number(text4).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');  // 12,345.67
-       
-			
-			var out02 = Number(password)+Number(text3)+Number(text4);
-			
-			    
-			var perman = Number(username)/Number(cost);  
-			var perman_ = Number(perman).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');  // 12,345.67   
-			var perman2 = Number(perman)*Number(cost);
-			    
-			var payment_ = Number(perman2)+Number(out02);
-			var payment = (payment_).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');  // 12,345.67
-			var strWeek = ["อาทิตย์", "จันทร์", "อังคาร", "พุธ", "พฤหัสบดี", "ศุกร์", "เสาร์"]; //function หาวันในสัปดาห์
-                        var strMonthFull = ["มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", "มิถุนายน", "กรกฎาคม", "สิงหาคม", "กันยายน", "ตุลาคม", "พฤศจิกายน", "ธันวาคม"]; //ฟังก์ชันเดือน
-                        var  d = new Date(); //กำหนด d เก็บวันที่วันนี้
-                        var daycur = d.getDay(); // วัน 0-6 เพื่อไปค้นหาวัน จันทร์-ศุกร์
-                        var monthcur=d.getMonth();  //เลขเดือน 0-11 เพื่อไปหา มกราคม-ธัวาคม
-                        var curweek = strWeek[daycur]; //ค้นหาวันของวันปัจจุบัน
-                        var curdate=d.getDate(); // วันที่ 1-31
-                        var MonthId = strMonthFull[monthcur]; //เลือกเดือนภาษาไทย มกราคม-ธันวาคม
-                        var yearcur =d.getFullYear()+543; //เพิ่มปี ค.ศ. ให้เป็น พ.ศ.
-                        var TimeHours = d.getHours();//เวลาชั่วโมง
-                        var TimeMiutes = d.getMinutes(); //เวลานาที			    
-			var msg ="วัน"+curweek+ "ที่ " +curdate+ ' ' +MonthId+ ' พ.ศ. ' +yearcur+'\n timestamp '+TimeHours+":"+TimeMiutes
-	                   
+                         
+					    
+			                  
 	            
                         
 
@@ -212,7 +189,7 @@ function myFunction(x) {
                             // ส่ง username/password เข้าห้องแชท
                             liff.sendMessages([{
                                 'type': 'text',
-                                'text': ' 👨‍🍳ประมาณการค่าใช้จ่าย🎉'+'\n\nผู้ติดต่อ : '+contact+'\nเบอร์มือถือ : '+tel+'\n________________________'+'\n\n1) ยอดผู้ใช้บริการ : '+cost_+' คน'+ '\n2) ค่าอาหารและเครื่องดื่ม : '+'\n     '+username_+' บาท'+ '\n     ( ราคาต่อคน '+perman_ +' บาท )'+'\n\n3) เพิ่มอาหาร : '+password_+' บาท' + '\n4) เพิ่มเครื่องดื่ม : '+text3_+' บาท' + '\n5) ค่าใช้จ่ายอื่น ๆ : '+text4_+' บาท' +'\n________________________'+ '\n💰รวมเป็นเงิน : '+payment+' บาท'+'\n\n⏰ '+msg
+                                'text': 'Money'+contact+'ช'+tel
                             }]).then(function() {
                                 window.alert('Message sent');
                             }).catch(function(error) {
