@@ -43,13 +43,25 @@ function myFunction(x) {
                 <div class="container">
                     <form>
 		            
-<select name="contact" id="contact"> 
-    <option value="0">เลือกระดับ</option>
-    <option value="ป1">ป1</option>
-    <option value="ป2">ป2</option>
-    <option value="ป3">ป3</option>
-    <option value="น1">น1</option>
-</select>
+ <label><h6>ปีจดทะเบียนรถยนต์</h6></label>
+          <select
+            id="contact"
+            class="browser-default"
+            required
+            class="validate"
+          >
+            <option value="" disabled selected>กรุณาเลือกปีจดทะเบียน</option>
+            <option value="1">2019</option>
+            <option value="2">2018</option>
+            <option value="3">2017</option>
+            <option value="4">2016</option>
+            <option value="5">2015</option>
+            <option value="6">2014</option>
+            <option value="7">2013</option>
+            <option value="8">2012</option>
+            <option value="9">2011</option>
+            <option value="10">2010</option>
+          </select>
 			    
 			    <div class="form-group row">
                             <label for="tel" class="col-sm-3 col-form-label">ชั้น การกรอก ดังนี้(0.5 หรือ 14.0 หรือ 14.5 ) : </label>
