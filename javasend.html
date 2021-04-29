@@ -45,23 +45,25 @@ function myFunction(x) {
 		            <div class="form-group row">
                             <label for="contact" class="col-sm-3 col-form-label">เลือก👮 : </label>
                             <div class="col-sm-9">
-                                <p>ประเภท</p>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="class" id="class" value="ป1">
-                                    <label class="form-check-label" for="class1">ป1</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="class" id="class" value="ป2">
-                                    <label class="form-check-label" for="class4">ป2</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="class" id="class" value="ป3">
-                                    <label class="form-check-label" for="class1">ป3</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="class" id="class" value="น1">
-                                    <label class="form-check-label" for="class4">น1</label>
-                                </div>
+                                
+		            <label for="planselect">ประเภท</label>
+                            <select id="planselect" class="form-control" name = "contact">
+                            <option selected>เลือกระดับ</option>
+                            <option>ป1</option>
+                            <option>ป2</option>
+                            <option>ป3</option>
+                            <option>น1</option>
+                            <option>น2</option>
+                            <option>น3</option>
+                            <option>น4</option>
+                            <option>น5</option>
+                            <option>น6</option>
+		            <option>น7</option>
+                            <option>น8</option>
+                            <option>น9</option>
+                            </select>
+				    
+				    
 				   
                             </div>
                         </div>
@@ -138,7 +140,7 @@ function myFunction(x) {
 
                     // เหตุการณ์กดปุ่ม Submit form login
                     $('button#login').click(function(){
-                        var class = $('input#class').val(); // รับค่า class จากฟอร์ม
+                        var contact = $('input#contact').val(); // รับค่า class จากฟอร์ม
 			var tel = $('input#tel').val(); // รับค่า tel จากฟอร์ม			    
                          
 					    
@@ -146,18 +148,18 @@ function myFunction(x) {
 	            
                         
 
-                        if(tel != '' ||class != '' || tel != ''){
+                        if(tel != '' ||contact != '' || tel != ''){
                             // ส่ง username/password เข้าห้องแชท
                             liff.sendMessages([{
                                 'type': 'text',
-                                'text': 'Money'+class+'ช'+tel
+                                'text': 'Money'+contact+'ช'+tel
                             }]).then(function() {
                                 window.alert('Message sent');
                             }).catch(function(error) {
                                 window.alert('Error sending message: ' + error);
                             });
                         }else{
-                            alert('class / tel Cannot blank !');
+                            alert('ระดับ / ชั้น Cannot blank !');
                         }
 
                     });
