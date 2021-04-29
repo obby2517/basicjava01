@@ -45,61 +45,23 @@ function myFunction(x) {
 		            <div class="form-group row">
                             <label for="contact" class="col-sm-3 col-form-label">เลือก👮 : </label>
                             <div class="col-sm-9">
-                                <div>
-                                   <input type="radio" id="contact" name="contact" value="ป1">
-                                  <label for="contact">ป1</label>
-                                    </div>
-
-                                     <div>
-					  <input type="radio" id="contact" name="contact" value="ป2" >
-				  <label for="contact">ป2</label>
-					</div>
-
-					<div>
- 					 <input type="radio" id="contact" name="contact" value="ป3" >
-  				<label for="contact">ป3</label>
-					</div>
-                                  <div>
-					  <input type="radio" id="contact" name="contact" value="น1" >
-				  <label for="contact">น1</label>
-					</div>
-
-					<div>
- 					 <input type="radio" id="contact" name="contact" value="น2" >
-  				<label for="contact">น2</label>
-					</div>
-				     <div>
-					  <input type="radio" id="contact" name="contact" value="น3" >
-				  <label for="contact">น3</label>
-					</div>
-
-					<div>
- 					 <input type="radio" id="contact" name="contact" value="น4" >
-  				<label for="contact">น4</label>
-					</div>
-				     <div>
-					  <input type="radio" id="contact" name="contact" value="น5" >
-				  <label for="contact">น5</label>
-					</div>
-
-					<div>
- 					 <input type="radio" id="contact" name="contact" value="น6" >
-  				<label for="contact">น6</label>
-					</div>
-				    
-				     <div>
-					  <input type="radio" id="contact" name="contact" value="น7" >
-				  <label for="contact">น7</label>
-					</div>
-
-					<div>
- 					 <input type="radio" id="contact" name="contact" value="น8" >
-  				<label for="contact">น8</label>
-					</div>
-				    <div>
- 					 <input type="radio" id="contact" name="contact" value="น9" >
-  				<label for="contact">น9</label>
-					</div>
+                                <p>ประเภท</p>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="class" id="class" value="ป1">
+                                    <label class="form-check-label" for="class1">ป1</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="class" id="class" value="ป2">
+                                    <label class="form-check-label" for="class4">ป2</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="class" id="class" value="ป3">
+                                    <label class="form-check-label" for="class1">ป3</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="class" id="class" value="น1">
+                                    <label class="form-check-label" for="class4">น1</label>
+                                </div>
 				   
                             </div>
                         </div>
@@ -176,7 +138,7 @@ function myFunction(x) {
 
                     // เหตุการณ์กดปุ่ม Submit form login
                     $('button#login').click(function(){
-                        var contact = $('input#contact').val(); // รับค่า contact จากฟอร์ม
+                        var class = $('input#class').val(); // รับค่า class จากฟอร์ม
 			var tel = $('input#tel').val(); // รับค่า tel จากฟอร์ม			    
                          
 					    
@@ -184,18 +146,18 @@ function myFunction(x) {
 	            
                         
 
-                        if(tel != '' ||contact != '' || tel != ''){
+                        if(tel != '' ||class != '' || tel != ''){
                             // ส่ง username/password เข้าห้องแชท
                             liff.sendMessages([{
                                 'type': 'text',
-                                'text': 'Money'+contact+'ช'+tel
+                                'text': 'Money'+class+'ช'+tel
                             }]).then(function() {
                                 window.alert('Message sent');
                             }).catch(function(error) {
                                 window.alert('Error sending message: ' + error);
                             });
                         }else{
-                            alert('contact / tel Cannot blank !');
+                            alert('class / tel Cannot blank !');
                         }
 
                     });
