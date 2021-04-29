@@ -42,16 +42,18 @@ function myFunction(x) {
             <div class="col-md-12">
                 <div class="container">
                     <form>
-		             <p>Select a maintenance drone:</p>
-
-<div>
-  <input type="radio" id="contact" name="contact" value="ป1">
-  <label for="contact">ป1</label>
-</div>
-
-<div>
-  <input type="radio" id="contact" name="contact" value="ป2">
-  <label for="contact">ป2</label>
+		            <div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">Dropdown</button>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">Item</a>
+      <a class="dropdown-item" href="#">Another item</a>
+      <a class="dropdown-item" href="#">One more item</a>
+      <div role="separator" class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#">Separated link</a>
+    </div>
+  </div>
+  <input type="text" class="form-control" aria-label="Text input with dropdown button" name="contact" id="contact">
 </div>
 
 
