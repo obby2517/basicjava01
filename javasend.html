@@ -42,12 +42,14 @@ function myFunction(x) {
             <div class="col-md-12">
                 <div class="container">
                     <form>
-		            <div class="form-group row">
-                            <label for="contact" class="col-sm-3 col-form-label">ระดับ การกรอก ดังนี้(ป1 หรือ น1 หรือ น9 ) : </label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" name="contact" id="contact" placeholder="กรอกตัวอักษรและเลข" onfocus="myFunction(tel)">
-                            </div>
-                        </div>
+		            
+<select name="contact" id="contact"> 
+    <option value="0">เลือกระดับ</option>
+    <option value="ป1">ป1</option>
+    <option value="ป2">ป2</option>
+    <option value="ป3">ป3</option>
+    <option value="น1">น1</option>
+</select>
 			    
 			    <div class="form-group row">
                             <label for="tel" class="col-sm-3 col-form-label">ชั้น การกรอก ดังนี้(0.5 หรือ 14.0 หรือ 14.5 ) : </label>
