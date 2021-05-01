@@ -42,17 +42,20 @@ function myFunction(x) {
             <div class="col-md-12">
                 <div class="container">
                     <form>
-		           <div class="form-group row">
-			    <label for ="contact">ระดับ</label>
-				   <div class="col-sm-9">
-			    <select id="contact" name="contact">
-				<option value ="ป1">ป1</option>
-				<option value ="ป2">ป2</option>
-				<option value ="ป3">ป3</option>
-				<option value ="น1">น1</option>
-	                </select>
-                       </div>
-                        </div>
+		           <div class="row">
+                <div class="col-md-3">
+                    <label class="form-label">เลือกแผนก</label>
+                    <select name="contact" class="form-select" required>
+                        <option value="" disabled selected>เลือก..</option>
+                        <option value="สารบรรณและธุรการ">สารบรรณและธุรการ</option>
+                        <option value="แผนและโครงการ">แผนและโครงการ</option>
+                        <option value="กำลังพล">กำลังพล</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        กรุณาเลือก แผนก
+                    </div>
+                </div>
+            </div>
 
  
 			    
