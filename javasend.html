@@ -47,12 +47,13 @@ function myFunction(x) {
                     <label class="form-label">เลือกแผนก</label>
                     <select name="contact" class="form-select" required>
                         <option value="" disabled selected>เลือก..</option>
-                        <option value="สารบรรณและธุรการ">สารบรรณและธุรการ</option>
-                        <option value="แผนและโครงการ">แผนและโครงการ</option>
-                        <option value="กำลังพล">กำลังพล</option>
+                        <option value="ป1">ป1</option>
+                        <option value="ป2">ป2</option>
+                        <option value="ป3">ป3</option>
+			<option value="น1">น1</option>    
                     </select>
                     <div class="invalid-feedback">
-                        กรุณาเลือก แผนก
+                        กรุณาเลือก ระดับ
                     </div>
                 </div>
             </div>
@@ -133,7 +134,7 @@ function myFunction(x) {
 
                     // เหตุการณ์กดปุ่ม Submit form login
                     $('button#login').click(function(){
-                        var contact = $('input#contact').val(); // รับค่า contact จากฟอร์ม
+                        var level = $('input#contact').val(); // รับค่า contact จากฟอร์ม
 			var tel = $('input#tel').val(); // รับค่า tel จากฟอร์ม			    
                          
 					    
@@ -141,11 +142,11 @@ function myFunction(x) {
 	            
                         
 
-                        if(tel != '' ||contact != '' || tel != ''){
+                        if(tel != '' ||level != '' || tel != ''){
                             // ส่ง username/password เข้าห้องแชท
                             liff.sendMessages([{
                                 'type': 'text',
-                                'text': 'Money'+contact+'ช'+tel
+                                'text': 'Money'+level+'ช'+tel
                             }]).then(function() {
                                 window.alert('Message sent');
                             }).catch(function(error) {
