@@ -87,7 +87,7 @@ function myFunction(x) {
 			    
 			   <div class="form-group row">
                             <div class="col-sm-12">
-                                <button id="login2" type="button" class="btn btn-block btn-lg btn-info">ปรับชั้นเงินเดือน</button>
+                                <button id="upmoney" type="button" class="btn btn-block btn-lg btn-info">ปรับชั้นเงินเดือน</button>
                             </div>
                         </div>  
                     </form>
@@ -164,7 +164,7 @@ function myFunction(x) {
 	    
 	    
 	    // เหตุการณ์กดปุ่ม Submit ปรับชั้นเงินเดือน
-                    $('button#login2').click(function(){
+                    $('button#upmoney').click(function(){
                         var level = $('select#contact').val(); // รับค่า contact จากฟอร์ม
 			var tel = $('input#tel').val(); // รับค่า tel จากฟอร์ม			    
                      
@@ -186,7 +186,7 @@ function myFunction(x) {
 
 
                 }else{
-                    liff.login2();
+                    liff.upmoney();
                 }
             }, err => console.error(err.code, error.message));
         });
