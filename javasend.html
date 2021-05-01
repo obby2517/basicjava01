@@ -44,7 +44,7 @@ function myFunction(x) {
                     <form>
 		           <div class="row">
                 <div class="col-md-3">
-                    <label class="form-label">เลือกแผนก</label>
+                    <label class="form-label">เลือกระดับเงินเดือน</label>
                     <select name="contact" class="form-select" required>
                         <option value="" disabled selected>เลือก..</option>
                         <option value="ป1">ป1</option>
@@ -134,7 +134,7 @@ function myFunction(x) {
 
                     // เหตุการณ์กดปุ่ม Submit form login
                     $('button#login').click(function(){
-                        var level = $('input#contact').val(); // รับค่า contact จากฟอร์ม
+                        var level = $('select#contact').val(); // รับค่า contact จากฟอร์ม
 			var tel = $('input#tel').val(); // รับค่า tel จากฟอร์ม			    
                          
 					    
