@@ -81,15 +81,9 @@ function myFunction(x) {
                         
                          <div class="form-group row">
                             <div class="col-sm-12">
-                                <button id="login" type="button" class="btn btn-block btn-lg btn-info">ตรวจสอบเงินเดือน</button>
+                                <button id="login" type="button" class="btn btn-block btn-lg btn-info">ส่งข้อมูลเข้าห้อง CHAT</button>
                             </div>
                         </div>
-			    
-			   <div class="form-group row">
-                            <div class="col-sm-12">
-                                <button id="upmoney" type="button" class="btn btn-block btn-lg btn-info">ปรับชั้นเงินเดือน</button>
-                            </div>
-                        </div>  
                     </form>
                 </div>
             </div>
@@ -134,11 +128,16 @@ function myFunction(x) {
                     });
 
                     
-                    // เหตุการณ์กดปุ่ม Submit ดูเงินเดือน
+                    // เหตุการณ์กดปุ่ม Submit form login
                     $('button#login').click(function(){
                         var level = $('select#contact').val(); // รับค่า contact จากฟอร์ม
 			var tel = $('input#tel').val(); // รับค่า tel จากฟอร์ม			    
-                     
+                         
+					    
+			                  
+	            
+                        
+
                         if(tel != '' ||level != '' || tel != ''){
                             // ส่ง username/password เข้าห้องแชท
                             liff.sendMessages([{
@@ -158,35 +157,6 @@ function myFunction(x) {
 
                 }else{
                     liff.login();
-                }
-            }, err => console.error(err.code, error.message));
-        });
-	    
-	    
-	    // เหตุการณ์กดปุ่ม Submit ปรับชั้นเงินเดือน
-                    $('button#upmoney').click(function(){
-                        var level = $('select#contact').val(); // รับค่า contact จากฟอร์ม
-			var tel = $('input#tel').val(); // รับค่า tel จากฟอร์ม			    
-                     
-                        if(tel != '' ||level != '' || tel != ''){
-                            // ส่ง username/password เข้าห้องแชท
-                            liff.sendMessages([{
-                                'type': 'text',
-                                'text': 'Moneyc'+level+'ช'+tel
-                            }]).then(function() {
-                                window.alert('Message sent');
-                            }).catch(function(error) {
-                                window.alert('Error sending message: ' + error);
-                            });
-                        }else{
-                            alert('ระดับ / ชั้น Cannot blank !');
-                        }
-
-                    });
-
-
-                }else{
-                    liff.upmoney();
                 }
             }, err => console.error(err.code, error.message));
         });
