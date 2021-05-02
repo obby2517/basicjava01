@@ -34,7 +34,16 @@ function myFunction(x) {
             <div class="col-md-12">
                 <div class="container">
                     <form>
-		 <div class="row">
+		    <div class="form-group row">
+				   
+                            <label for="tel" class="col-sm-3 col-form-label">วันที่ การกรอก (1,2,31 ) : </label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" name="tel" id="tel" placeholder="กรอกวันที่" onfocus="myFunction(tel)">
+                            </div>
+                        </div>
+			    
+			    
+             <div class="row">
                 <div class="col-md-3">
                     <label class="form-label">เลือกเดือน</label>
                     <select type="text" name="contact" id="contact" class="form-select" required>
@@ -54,20 +63,14 @@ function myFunction(x) {
 			    
                     </select>
                     <div class="invalid-feedback">
-                        กรุณาเลือก ระดับ
+                        กรุณาเลือก เดือน
                     </div>
                 </div>
             </div>
 
  
 			    
-			    <div class="form-group row">
-				   
-                            <label for="tel" class="col-sm-3 col-form-label">วันที่ การกรอก (1,2,31 ) : </label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" name="tel" id="tel" placeholder="กรอกวันที่" onfocus="myFunction(tel)">
-                            </div>
-                        </div>
+			
                         
 			     <div class="form-group row">
 				   
@@ -95,7 +98,7 @@ function myFunction(x) {
                         <option value="ask">ถามข้อมูล</option>
                       </select>
                     <div class="invalid-feedback">
-                        กรุณาเลือก ระดับ
+                        กรุณาเลือก โหมด
                     </div>
                 </div>
             </div>
