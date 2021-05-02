@@ -34,33 +34,23 @@ function myFunction(x) {
             <div class="col-md-12">
                 <div class="container">
                     <form>
-		           <div class="row">
+		 <div class="row">
                 <div class="col-md-3">
-                    <label class="form-label">เลือกระดับเงินเดือน</label>
+                    <label class="form-label">เลือกเดือน</label>
                     <select type="text" name="contact" id="contact" class="form-select" required>
                         <option value="" disabled selected>เลือก..</option>
-                        <option value="ป1">ป1 สูงสุด(40.0)</option>
-                        <option value="ป2">ป2 สูงสุด(40.0)</option>
-                        <option value="ป3">ป3 สูงสุด(37.0)</option>
-			<option value="น1">น1 สูงสุด(46.0)</option>    
-			<option value="น2">น2 สูงสุด(29.0)</option>        
-			    <option value="น3">น3 สูงสุด(33.0)</option>    
-			    <option value="น4">น4 สูงสุด(29.0)</option>
-			    <option value="น5">น5 สูงสุด(28.0)</option>    
-			    <option value="น6">น6 สูงสุด(22.0)</option>
-			    <option value="น7">น7 สูงสุด(19.0)</option>    
-			    <option value="น8">น8 สูงสุด(18.0)</option>
-			    <option value="น9">น9 สูงสุด(12.5)</option>   
-			    <option value="ย ป1">เยียวยา ป1 สูงสุด(19.0)</option>
-                        <option value="ย ป2">เยียวยา ป2 สูงสุด(18.5)</option>
-                        <option value="ย ป3">เยียวยา ป3 สูงสุด(10.5)</option>
-			<option value="ย น1">เยียวยา น1 สูงสุด(10.5)</option>    
-			<option value="ย น2">เยียวยา น2 สูงสุด(12.5)</option>        
-			    <option value="ย น3">เยียวยา น3 สูงสุด(2.0)</option>    
-			    <option value="ย น4">เยียวยา น4 สูงสุด(5.5)</option>
-			    <option value="ย น5">เยียวยา น5 สูงสุด(2.0)</option>    
-			    <option value="ย น6">เยียวยา น6 สูงสุด(3.0)</option>
-			    <option value="ย น7">เยียวยา น7 สูงสุด(1.0)</option>    
+                        <option value="1">มกราคม</option>
+                        <option value="2">กุมภาพันธ์</option>
+                        <option value="3">มีนาคม</option>
+			    <option value="4">เมษายน</option>
+			     <option value="5">พฤษภาคม</option>
+			     <option value="6">มิถุนายน</option>
+			     <option value="7">กรกฎาคม</option>
+			     <option value="8">สิงหาคม</option>
+			     <option value="9">กันยายน</option>
+			     <option value="10">ตุลาคม</option>
+			 <option value="11">พฤศจิกายน</option>
+			     <option value="12">ธันวาคม</option>
 			    
                     </select>
                     <div class="invalid-feedback">
@@ -73,15 +63,56 @@ function myFunction(x) {
 			    
 			    <div class="form-group row">
 				   
-                            <label for="tel" class="col-sm-3 col-form-label">ชั้น การกรอก ดังนี้(0.5 หรือ 14.0 หรือ 14.5 ) : </label>
+                            <label for="tel" class="col-sm-3 col-form-label">วันที่ การกรอก (1,2,31 ) : </label>
                             <div class="col-sm-9">
-                                <input type="number" class="form-control" name="tel" id="tel" placeholder="กรอกตัวเลขและจุดทศนิยม" onfocus="myFunction(tel)">
+                                <input type="text" class="form-control" name="tel" id="tel" placeholder="กรอกวันที่" onfocus="myFunction(tel)">
                             </div>
                         </div>
                         
+			     <div class="form-group row">
+				   
+                            <label for="tel" class="col-sm-3 col-form-label">ชั่วโมง การกรอก (*,0,1,12,00 ) : </label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" name="tel2" id="tel" placeholder="กรอกชั่วโมง" onfocus="myFunction(tel)">
+                            </div>
+                        </div>
+			    
+			        <div class="form-group row">
+				   
+                            <label for="tel" class="col-sm-3 col-form-label">นาที การกรอก (*,0,1,12,00,59) : </label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" name="tel3" id="tel" placeholder="กรอกนาที" onfocus="myFunction(tel)">
+                            </div>
+                        </div>
+			    
+			    
+		  <div class="row">
+                <div class="col-md-3">
+                    <label class="form-label">เลือกโหมด</label>
+                    <select type="text" name="contact2" id="contact" class="form-select" required>
+                        <option value="" disabled selected>เลือก..</option>
+                        <option value="direct">ส่งข้อมูล</option>
+                        <option value="ask">ถามข้อมูล</option>
+                      </select>
+                    <div class="invalid-feedback">
+                        กรุณาเลือก ระดับ
+                    </div>
+                </div>
+            </div>
+			      <div class="form-group row">
+				   
+                            <label for="tel" class="col-sm-3 col-form-label">ข้อความที่จะส่ง : </label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" name="tel4" id="tel" placeholder="กรอกข้อความ" onfocus="myFunction(tel)">
+                            </div>
+                        </div>
+			    
+			    
+			    
+			    
                          <div class="form-group row">
                             <div class="col-sm-12">
-                                <button id="login" type="button" class="btn btn-block btn-lg btn-info">ดูจำนวนเงิน</button>
+                                <button id="login" type="button" class="btn btn-block btn-lg btn-info">บันทึก</button>
                             </div>
                         </div>
                     </form>
@@ -130,8 +161,12 @@ function myFunction(x) {
                     
                     // เหตุการณ์กดปุ่ม Submit form login
                     $('button#login').click(function(){
-                        var level = $('select#contact').val(); // รับค่า contact จากฟอร์ม
-			var tel = $('input#tel').val(); // รับค่า tel จากฟอร์ม			    
+                        var level = $('select#contact').val(); // รับค่า month
+			var tel = $('input#tel').val(); // รับค่า day			    
+			var tel2 = $('input#tel2').val(); // รับค่า hour
+			var tel3 = $('input#tel3').val(); // รับค่า minute
+		 var level2 = $('select#contact2').val(); // รับค่า mode
+			var tel4 = $('input#tel4').val(); // รับค่า message    
                          
 					    
 			                  
@@ -142,14 +177,14 @@ function myFunction(x) {
                             // ส่ง username/password เข้าห้องแชท
                             liff.sendMessages([{
                                 'type': 'text',
-                                'text': 'Money'+level+'ช'+tel
+                                'text': 'schedule add m='+level+' d='+tel+' hh='+tel2+' mm='+tel3+' mode='+level2+' msg='+tel4
                             }]).then(function() {
                                 window.alert('Message sent');
                             }).catch(function(error) {
                                 window.alert('Error sending message: ' + error);
                             });
                         }else{
-                            alert('ระดับ / ชั้น Cannot blank !');
+                            alert('ท่านกรอกข้อมูลไม่ครบ !');
                         }
 
                     });
