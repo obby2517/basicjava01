@@ -180,7 +180,7 @@ function myFunction(x) {
                             // ส่ง username/password เข้าห้องแชท
                             liff.sendMessages([{
                                 'type': 'text',
-                                'text': 'schedule add m='+level+' d='+tel+' hh='+tel2+' mm='+tel3+' mode='+level2+' msg='+tel4
+                                'text': 'schedule add d='+tel+' m='+level+' hh='+tel2+' mm='+tel3+' mode='+level2+' msg='+tel4
                             }]).then(function() {
                                 window.alert('Message sent');
                             }).catch(function(error) {
