@@ -12,72 +12,92 @@
       await liff.init({ liffId: "1655301964-7NqwbMB3" })
       await liff.shareTargetPicker([
         {
-          type: "flex",
-          altText: "Flex message From Share Target Picker",
-          contents:{
-  "type": "bubble",
-  "body": {
-    "type": "box",
-    "layout": "vertical",
-    "contents": [
-      {
+  "type": "carousel",
+  "contents": [
+    {
+      "type": "bubble",
+      "size": "micro",
+      "direction": "rtl",
+      "hero": {
         "type": "image",
-        "url": "https://sv1.picz.in.th/images/2021/02/20/oD0baZ.jpg",
-        "size": "full",
-        "animated": false,
-        "position": "relative"
+        "url": "https://www.kaewmuangloei.com/apps/assets/upload/baimo/52c4d37f7880ab56ed4da026fc945058.jpg",
+        "size": "xxl",
+        "aspectMode": "fit",
+        "aspectRatio": "2:3",
+        "margin": "none",
+        "backgroundColor": "#e1e6e1"
       },
-      {
-        "type": "button",
-        "action": {
-          "type": "uri",
-          "label": "คลิกเพื่อฟังเพลง",
-          "uri": "https://youtu.be/Poy_ivO3naQ"
-        },
-        "style": "primary",
-        "color": "#FF33D0"
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "box",
+                "layout": "baseline",
+                "spacing": "sm",
+                "contents": []
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "horizontal",
+            "contents": [
+              {
+                "type": "button",
+                "action": {
+                  "type": "uri",
+                  "label": "S",
+                  "uri": "https://liff.line.me/1655687158-l7Z23wxw"
+                },
+                "style": "primary",
+                "height": "sm",
+                "color": "#d66a49",
+                "margin": "xs"
+              },
+              {
+                "type": "button",
+                "action": {
+                  "type": "uri",
+                  "label": "C",
+                  "uri": "https://script.google.com/macros/s/AKfycbzF4cU6EY4BaKx7bThupjVoHq1D42TpRga_URCr60Kn7aNVpqU/exec"
+                },
+                "style": "primary",
+                "height": "sm",
+                "margin": "xs"
+              },
+              {
+                "type": "button",
+                "action": {
+                  "type": "uri",
+                  "label": "A",
+                  "uri": "https://forms.gle/8y4CY2BnYBYai9rM6"
+                },
+                "style": "primary",
+                "height": "sm",
+                "color": "#4124d4",
+                "margin": "xs"
+              }
+            ],
+            "margin": "none"
+          }
+        ],
+        "spacing": "sm",
+        "paddingAll": "13px",
+        "backgroundColor": "#e1e6e1"
       },
-      {
-        "type": "text",
-        "text": "ผ่อนคลายกับเสียงเพลง 🎧",
-        "position": "relative",
-        "align": "center",
-        "wrap": true,
-        "adjustMode": "shrink-to-fit",
-        "weight": "bold"
-      }, 
-      {
-        "type": "button",
-        "action": {
-          "type": "uri",
-          "label": "รวมเพลงบรรเลง",
-          "uri": "https://www.youtube.com/playlist?list=PLnS_jUdml82dGX6pyNJC9IOPjbYkMxpyQ"
-        },
-        "style": "primary",
-        "color": "#FF33D0"
-      },
-      {
-        "type": "text",
-        "text": "   ",
-        "position": "relative",
-        "align": "center",
-        "wrap": true,
-        "adjustMode": "shrink-to-fit",
-        "weight": "bold"
-      },
-      {
-        "type": "button",
-        "action": {
-          "type": "uri",
-          "label": "แชร์วนไปคะ",
-          "uri": "https://liff.line.me/1655301964-7NqwbMB3"
-        },
-        "style": "primary"
-      }
-    ]
-  }
-}
+      "styles": {
+        "hero": {
+          "backgroundColor": "#29210c"
         }
+      }
+    }
+  ]
+}
       ])
       liff.closeWindow()
         }
