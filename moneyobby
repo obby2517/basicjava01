@@ -1,0 +1,154 @@
+<html lang="en">
+<head>
+	
+<script>
+function myFunction(x) {
+  x.style.background = "yellow";
+}
+</script>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>บันทึกรายรับ</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+	</head>
+<body>
+    
+    <div class="container mt-4">
+
+        <div class="row">
+            <div class="col">
+                <button class="btn btn-block btn-primary" id="btnScan">
+                    <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-upc-scan" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M1.5 1a.5.5 0 0 0-.5.5v3a.5.5 0 0 1-1 0v-3A1.5 1.5 0 0 1 1.5 0h3a.5.5 0 0 1 0 1h-3zM11 .5a.5.5 0 0 1 .5-.5h3A1.5 1.5 0 0 1 16 1.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 1-.5-.5zM.5 11a.5.5 0 0 1 .5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 1 0 1h-3A1.5 1.5 0 0 1 0 14.5v-3a.5.5 0 0 1 .5-.5zm15 0a.5.5 0 0 1 .5.5v3a1.5 1.5 0 0 1-1.5 1.5h-3a.5.5 0 0 1 0-1h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 1 .5-.5z"/>
+                        <path d="M3 4.5a.5.5 0 0 1 1 0v7a.5.5 0 0 1-1 0v-7zm2 0a.5.5 0 0 1 1 0v7a.5.5 0 0 1-1 0v-7zm2 0a.5.5 0 0 1 1 0v7a.5.5 0 0 1-1 0v-7zm2 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-7zm3 0a.5.5 0 0 1 1 0v7a.5.5 0 0 1-1 0v-7z"/>
+                    </svg> 
+                    Scan Code
+                </button>
+                Scan Result : <span id="scan_result"></span>
+            </div>
+           
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-md-12">
+                <div class="container">
+                    <form>
+		    <div class="form-group row">
+				   
+                            <label for="tel" class="col-sm-3 col-form-label">รับเงิน (กรอกเฉพาะตัวเลข เช่น 1223.45 หรือ 123 ) : </label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" name="tel" id="tel" placeholder="กรอกตัวเลขเท่านั้น" onfocus="myFunction(tel)">
+                            </div>
+                        </div>
+			    
+			          
+			
+                        
+			     <div class="form-group row">
+				   
+                            <label for="tel" class="col-sm-3 col-form-label">บันทึกรายการจ่าย (กรอกข้อความ เช่น ค่าอาหาร ค่าน้ำ ถุงขยะ) : </label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" name="tel2" id="tel2" placeholder="กรอกรายการที่จ่าย" onfocus="myFunction(tel2)">
+                            </div>
+                        </div>
+			    
+			        <div class="form-group row">
+				   
+                            <label for="tel" class="col-sm-3 col-form-label">จำนวนเงินที่จ่าย (กรอกเฉพาะตัวเลข เช่น 1223.45 หรือ 123 ) : </label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" name="tel3" id="tel3" placeholder="กรอกตัวเลขเท่านั้น" onfocus="myFunction(tel3)">
+                            </div>
+                        </div>
+			    
+		    
+			    
+			    
+			    
+                         <div class="form-group row">
+                            <div class="col-sm-12">
+                                <button id="login" type="button" class="btn btn-block btn-lg btn-info">บันทึก</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://static.line-scdn.net/liff/edge/versions/2.3.0/sdk.js"></script>
+    <script>
+        $(function(){
+            liff.init({ liffId: "1655947966-omOVzKVP" }, () => {
+                if (liff.isLoggedIn()) {
+                    // เหตุการณ์กดปุ่ม Scan
+                    $('button#btnScan').click(function(){
+                        if (!liff.isInClient()) { // เช็คว่าเปิดบน mobile หรือไม่ (ถ้าไม่ได้เปิดบน mobile)
+                            alert('ต้องเปิดบนมือถือเท่านั้น');
+                        }else{
+                            if (liff.scanCode) {
+                                liff.scanCode().then(result => {
+
+                                    // alert(JSON.stringify(result));
+                                    var obj = JSON.parse(JSON.stringify(result));
+                                    $('#scan_result').html(obj.value);
+                                    
+                                    // ส่ง messeage เข้าห้องแชท
+                                    liff.sendMessages([{
+                                        'type': 'text',
+                                        'text': obj.value
+                                    }]).then(function() {
+                                        window.alert('Message sent');
+                                    }).catch(function(error) {
+                                        window.alert('Error sending message: ' + error);
+                                    });
+                            
+
+                                }).catch(err => {
+                                    alert('scanCode failed!')
+                                });
+                            }
+                        }
+                    });
+
+                    
+                    // เหตุการณ์กดปุ่ม Submit form login
+                    $('button#login').click(function(){
+                        var level = $('select#contact').val(); // รับค่า month
+			var tel = $('input#tel').val(); // รับเงิน		    
+			var tel2 = $('input#tel2').val(); // รายการจ่าย
+			var tel3 = $('input#tel3').val(); // จำนวนที่จ่าย
+		
+                         
+					    
+			                  
+	            
+                        
+
+                        if(tel != '' ||level != '' || tel != ''){
+                            // ส่ง username/password เข้าห้องแชท
+                            liff.sendMessages([{
+                                'type': 'text',
+                                'text': 'โอน'+tel
+                            }]).then(function() {
+                                window.alert('Message sent');
+                            }).catch(function(error) {
+                                window.alert('Error sending message: ' + error);
+                            });
+                        }else{
+                            alert('ท่านกรอกข้อมูลไม่ครบ !');
+                        }
+
+                    });
+
+
+                }else{
+                    liff.login();
+                }
+            }, err => console.error(err.code, error.message));
+        });
+	   </script>
+</body>
+</html>
