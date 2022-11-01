@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
+  <title>LIFF App</title>
+</head>
+<body>
+  <script src="https://static.line-scdn.net/liff/edge/versions/2.5.0/sdk.js"></script>
+  <script>
+      async function main() {
+      await liff.init({ liffId: "1657611629-RKNBM1Kl" })
+      await liff.shareTargetPicker([
+       {
+          type: "flex",
+          altText: "Flex message From Share Target Picker",
+          contents:{
+  "type": "bubble",
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "image",
+        "url": "https://res.cloudinary.com/dwk1pevup/image/upload/v1667308867/S__10297400_pf8yru.jpg",
+        "size": "full",
+        "margin": "none",
+        "gravity": "top",
+        "aspectMode": "cover"
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "uri",
+          "label": "การเดินทางไปร่่วมงาน",
+          "uri": "https://www.google.com/maps?q=13.991868,100.510269"
+        },
+        "style": "primary",
+        "color": "#FF33D0"
+      },
+      {
+        "type": "text",
+        "text": " ",
+        "position": "relative",
+        "align": "center",
+        "wrap": true,
+        "adjustMode": "shrink-to-fit",
+        "weight": "bold"
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "uri",
+          "label": "สอบถามเส้นทาง",
+          "uri": "tel:0813120365"
+        },
+        "style": "primary"
+      },
+      {
+        "type": "text",
+        "text": " ",
+        "position": "relative",
+        "align": "center",
+        "wrap": true,
+        "adjustMode": "shrink-to-fit",
+        "weight": "bold"
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "uri",
+          "label": "แชร์ให้เพื่อน",
+          "uri": "https://liff.line.me/1657611629-RKNBM1Kl"
+        },
+        "style": "primary"
+      }
+    ]
+  }
+}
+        }  
+      ])
+      liff.closeWindow()
+        }
+    main()
+  </script>
+</body>
+</html>
