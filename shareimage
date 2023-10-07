@@ -12,54 +12,66 @@
       await liff.init({ liffId: "2001052754-n5WM098Y" })
       await liff.shareTargetPicker([
        {
-          type: "flex",
-          altText: "Flex message From Share Target Picker",
-          contents:{
-  "type": "bubble",
-  "body": {
-    "type": "box",
-    "layout": "vertical",
-    "contents": [
-      {
-        "type": "image",
-        "url": "https://image.freepik.com/free-vector/cute-astronaut-playing-dj-electronic-music-with-headphone-cartoon-icon-illustration-science-technology-icon-concept_138676-2113.jpg",
-        "size": "full",
-        "margin": "none",
-        "gravity": "top",
-        "aspectMode": "cover"
-      },
-      {
-        "type": "button",
-        "action": {
-          "type": "uri",
-          "label": "Click 🎧",
-          "uri": "https://www.youtube.com/playlist?list=PLnS_jUdml82dGX6pyNJC9IOPjbYkMxpyQ"
+    "type": "imagemap",
+    "baseUrl": "https://res.cloudinary.com/dwk1pevup/image/upload/v1696692132/img4_luqepg.png?q=555",
+    "altText": "Imagemap generator By EX10",
+    "baseSize": {
+        "width": 1040,
+        "height": "1040"
+    },
+    "actions": [
+        {
+            "type": "uri",
+            "area": {
+                "x": 28,
+                "y": 26,
+                "width": 364,
+                "height": 358
+            },
+            "linkUri": "https://script.google.com/macros/s/AKfycbzcmrMsoj-UjvP7n2AslValEg77T6sDEPtpKnU5QF0PBPr3sWEx94PBRNLMv-xUFXyM-Q/exec"
         },
-        "style": "primary",
-        "color": "#FF33D0"
-      },
-      {
-        "type": "text",
-        "text": "อิอิ....😁",
-        "position": "relative",
-        "align": "center",
-        "wrap": true,
-        "adjustMode": "shrink-to-fit",
-        "weight": "bold"
-      },
-      {
-        "type": "button",
-        "action": {
-          "type": "uri",
-          "label": "แชร์วนไปคะ",
-          "uri": "https://liff.line.me/2001052754-n5WM098Y"
+        {
+            "type": "uri",
+            "area": {
+                "x": 14,
+                "y": 667,
+                "width": 418,
+                "height": 358
+            },
+            "linkUri": "https://drive.google.com/file/d/1zIPUHXeJSurNsLrZURIi62ULKOGUkz2q/view?openExternalBrowser=1"
         },
-        "style": "primary"
-      }
+        {
+            "type": "uri",
+            "area": {
+                "x": 455,
+                "y": 448,
+                "width": 510,
+                "height": 451
+            },
+            "linkUri": "https://script.google.com/macros/s/AKfycbyb-504S9hNAHaLT-tw3GkojpO0mw6I0xzKVjf1se3SPhDHNRkcFOZIBcOf6I2lqunDzw/exec?openExternalBrowser=1"
+        },
+        {
+            "type": "message",
+            "area": {
+                "x": 419,
+                "y": 34,
+                "width": 557,
+                "height": 379
+            },
+            "text": "ทำอะไรได้บ้าง"
+        },
+        {
+            "type": "uri",
+            "area": {
+                "x": 45,
+                "y": 434,
+                "width": 283,
+                "height": 189
+            },
+            "linkUri": "https://liff.line.me/2001052754-n5WM098Y"
+        }
     ]
-  }
-}
-        }  
+}  
       ])
       liff.closeWindow()
         }
