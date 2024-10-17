@@ -60,13 +60,18 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://static.line-scdn.net/liff/edge/versions/2.3.0/sdk.js"></script>
     <script>
+        function isIPad() {
+            return navigator.userAgent.includes('iPad') || 
+                   (navigator.userAgent.includes('Macintosh') && 'ontouchend' in document);
+        }
+
         $(function(){
-            liff.init({ liffId: "1653926122-aYBYW3M0" }, () => {
+            liff.init({ liffId: "YOUR_LIFF_ID" }, () => {
                 if (liff.isLoggedIn()) {
                     // เหตุการณ์กดปุ่ม Scan
                     $('#btnScan').on('click touchstart', function(){
-                        if (!liff.isInClient()) {
-                            alert('ต้องเปิดบนมือถือเท่านั้น');
+                        if (!liff.isInClient() && !isIPad()) {
+                            alert('ต้องเปิดบนมือถือเท่านั้น หรือใช้งานใน iPad');
                         } else {
                             if (liff.scanCode) {
                                 liff.scanCode().then(result => {
@@ -91,8 +96,8 @@
 
                     // เหตุการณ์กดปุ่ม send message
                     $('#btnSendMessage').on('click touchstart', function(){
-                        if (!liff.isInClient()) {
-                            alert('ต้องเปิดบนมือถือเท่านั้น');
+                        if (!liff.isInClient() && !isIPad()) { 
+                            alert('ต้องเปิดบนมือถือเท่านั้น หรือใช้งานใน iPad');
                         } else {
                             liff.sendMessages([{
                                 'type': 'text',
@@ -139,7 +144,13 @@
             }
         }
         
-        @media only screen and (min-width: 768px) and (max-width: 1024px) {
+        @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+            .btn {
+                font-size: 18px;
+            }
+        }
+        
+        @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
             .btn {
                 font-size: 16px;
             }
