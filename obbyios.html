@@ -6,47 +6,21 @@
     <title>QR Code Reader</title>
 </head>
 <body>
-    <h1>Scan a QR Code</h1>
-    <button id="btnQR" onclick="openQRScanner()">Open QR Code Scanner</button>
+    <h1>Hello World!</h1>
+    <button id="btnQR" onclick="window.location='https://line.me/R/nv/QRCodeReader'">Open QR Code Reader</button>
 
     <script src="https://static.line-scdn.net/liff/edge/versions/2.4.0/sdk.js"></script>
     <script>
         async function main() {
-            await liff.init({ liffId: "1653926122-aYBYW3M0" });
-        }
+            await liff.init({ liffId: "1653926122-aYBYW3M0" })
 
-        async function openQRScanner() {
-            const result = await liff.scanCode();
-            if (result) {
-                const qrCodeData = result.value;
-                document.getElementsByTagName("h1")[0].innerHTML = "QR Code Scanned: " + qrCodeData;
-
-                // Send the QR code data to a chat room using the LINE Messaging API
-                sendQRCodeToChat(qrCodeData);
+            const queryString = decodeURIComponent(window.location.search)
+            const params = new URLSearchParams(queryString)
+            if (params.get("param") !== null) {
+                document.getElementsByTagName("h1")[0].innerHTML = params.get("param")
             }
         }
-
-        async function sendQRCodeToChat(qrCodeData) {
-            const userId = liff.getProfile().userId; // Get the user ID
-
-            // Example of sending a message using LINE Messaging API
-            await fetch('https://api.line.me/v2/bot/message/push', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': 'Bearer Nr6MAmWYACT6c37vcYNpvZObhZ4VVwteP46ecgks1BzbqE1CoV2KL7rUFllfvm4ZHoMG0R9EIFnGHRofaF7MdujCig3XJKp5R827W9Bs1EemcELhlwNFm+yCny1g8lfBl6EQhCS4HMuV/PMniz0bAAdB04t89/1O/w1cDnyilFU='
-                },
-                body: JSON.stringify({
-                    to: userId, // or specify a group ID if you want to send to a chat room
-                    messages: [{
-                        type: 'text',
-                        text: 'Scanned QR Code: ' + qrCodeData
-                    }]
-                })
-            });
-        }
-
-        main();
+        main()
     </script>
 </body>
 </html>
