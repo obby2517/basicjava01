@@ -6,21 +6,44 @@
     <title>QR Code Reader</title>
 </head>
 <body>
-    <h1>Hello World!</h1>
-    <button id="btnQR" onclick="window.location='https://line.me/R/nv/QRCodeReader'">Open QR Code Reader</button>
+    <h1>QR Code Scanner</h1>
+    <button id="btnQR">Open QR Code Reader</button>
 
     <script src="https://static.line-scdn.net/liff/edge/versions/2.4.0/sdk.js"></script>
     <script>
         async function main() {
             await liff.init({ liffId: "1653926122-aYBYW3M0" })
 
-            const queryString = decodeURIComponent(window.location.search)
-            const params = new URLSearchParams(queryString)
-            if (params.get("param") !== null) {
-                document.getElementsByTagName("h1")[0].innerHTML = params.get("param")
-            }
+            document.getElementById("btnQR").addEventListener("click", async function() {
+                if (!liff.isInClient()) {
+                    alert("Please use this in the LINE app");
+                    return;
+                }
+
+                // Open QR Code scanner
+                liff.scanCodeV2().then(result => {
+                    const qrData = result.value;  // Get the scanned QR code data
+                    sendMessage(qrData);  // Send the data to a chat
+                }).catch(err => {
+                    console.error("Error scanning QR code: ", err);
+                });
+            });
         }
-        main()
+
+        function sendMessage(qrData) {
+            liff.sendMessages([
+                {
+                    'type': 'text',
+                    'text': 'QR Code Data: ' + qrData
+                }
+            ]).then(() => {
+                alert("Message sent successfully!");
+            }).catch(err => {
+                console.error("Error sending message: ", err);
+            });
+        }
+
+        main();
     </script>
 </body>
 </html>
