@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
+  <title>LIFF App</title>
+</head>
+<body>
+  <script src="https://static.line-scdn.net/liff/edge/versions/2.5.0/sdk.js"></script>
+  <script>
+      async function main() {
+      await liff.init({ liffId: "1655687158-l7Z23wxw" })
+      await liff.shareTargetPicker([
+       {
+          type: "flex",
+          altText: "Flex message From Share Target Picker",
+          contents:{
+  "type": "bubble",
+  "hero": {
+    "type": "image",
+    "url": "https://lh3.googleusercontent.com/d/1P3OQk3E0oineOh5eoh6hVHE1MQhFDwm3",
+    "size": "sm",
+    "aspectRatio": "5:5",
+    "aspectMode": "cover",
+    "offsetTop": "14px",
+    "offsetBottom": "14px",
+    "action": {
+      "type": "uri",
+      "uri": "https://lh3.googleusercontent.com/d/1P3OQk3E0oineOh5eoh6hVHE1MQhFDwm3"
+    }
+  },
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "text",
+        "text": "Kanya Sirindhorn",
+        "weight": "bold",
+        "size": "xl"
+      },
+      {
+        "type": "box",
+        "layout": "baseline",
+        "margin": "md",
+        "contents": [
+          {
+            "type": "icon",
+            "size": "sm",
+            "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
+          },
+          {
+            "type": "icon",
+            "size": "sm",
+            "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
+          },
+          {
+            "type": "icon",
+            "size": "sm",
+            "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
+          },
+          {
+            "type": "icon",
+            "size": "sm",
+            "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
+          },
+          {
+            "type": "icon",
+            "size": "sm",
+            "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
+          },
+          {
+            "type": "text",
+            "text": "5.0",
+            "size": "sm",
+            "color": "#999999",
+            "margin": "md",
+            "flex": 0
+          }
+        ]
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "margin": "lg",
+        "spacing": "sm",
+        "contents": [
+          {
+            "type": "box",
+            "layout": "baseline",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "Place",
+                "color": "#aaaaaa",
+                "size": "sm",
+                "flex": 1
+              },
+              {
+                "type": "text",
+                "text": "368-372, 368-372 Sirindhorn Rd, Bang Phlat, Bangkok 10700",
+                "wrap": true,
+                "color": "#666666",
+                "size": "sm",
+                "flex": 5
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "type": "box",
+    "layout": "vertical",
+    "spacing": "sm",
+    "contents": [
+      {
+        "type": "button",
+        "style": "primary",
+        "height": "sm",
+        "action": {
+          "type": "uri",
+          "label": "ตารางเวร",
+          "uri": "https://docs.google.com/document/d/1xJZA814QitlS2H7guhHzfxJIiXGZFvTPDMPTxZxlt8I/edit"
+        }
+      },
+      {
+        "type": "button",
+        "style": "primary",
+        "height": "sm",
+        "action": {
+          "type": "uri",
+          "label": "แบบบันทึกลงชื่อรับใหม่",
+          "uri": "https://docs.google.com/spreadsheets/d/1ZF4HisFi2VtaOrt1ETPtngWirVbGXDLvYf97_BksVsU/edit#gid=2114176822"
+        }
+      },
+      {
+        "type": "button",
+        "style": "primary",
+        "height": "sm",
+        "action": {
+          "type": "uri",
+          "label": "แบบฟอร์มยื่นใบลา",
+          "uri": "https://forms.gle/xnhpxrJekPfgt9RR6"
+        }
+      },
+      {
+        "type": "button",
+        "style": "primary",
+        "height": "sm",
+        "action": {
+          "type": "uri",
+          "label": "แบบฟอร์มแจ้งซ่อมเครื่องมือ",
+          "uri": "https://docs.google.com/forms/d/e/1FAIpQLSedgcRnZFw-OdpROtnKZLQXQuQZBv1ZrfRktOEjKjdVsFLfGQ/viewform"
+        }
+      },
+      {
+        "type": "button",
+        "style": "primary",
+        "height": "sm",
+        "action": {
+          "type": "uri",
+          "label": "Voice of Us",
+          "uri": "https://forms.gle/WMR3yoYp1rEPPf3b9"
+        }
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [],
+        "margin": "sm"
+      }
+    ],
+    "flex": 0
+  }
+}
+        }  
+      ])
+      liff.closeWindow()
+        }
+    main()
+  </script>
+</body>
+</html>
