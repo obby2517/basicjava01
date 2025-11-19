@@ -16,65 +16,118 @@
           altText: "Flex message From Share Target Picker",
           contents:{
   "type": "bubble",
+  "hero": {
+    "type": "image",
+    "url": "https://developers-resource.landpress.line.me/fx/img/01_1_cafe.png",
+    "size": "full",
+    "aspectRatio": "20:13",
+    "aspectMode": "cover",
+    "action": {
+      "type": "uri",
+      "uri": "https://line.me/"
+    }
+  },
   "body": {
     "type": "box",
     "layout": "vertical",
-    "spacing": "md",
     "contents": [
       {
+        "type": "text",
+        "text": "Brown Cafe",
+        "weight": "bold",
+        "size": "xl"
+      },
+      {
         "type": "box",
-        "layout": "vertical",
-        "paddingAll": "14px",
-        "backgroundColor": "#E8F5E9",
-        "cornerRadius": "12px",
+        "layout": "baseline",
+        "margin": "md",
         "contents": [
           {
+            "type": "icon",
+            "size": "sm",
+            "url": "https://developers-resource.landpress.line.me/fx/img/review_gold_star_28.png"
+          },
+          {
+            "type": "icon",
+            "size": "sm",
+            "url": "https://developers-resource.landpress.line.me/fx/img/review_gold_star_28.png"
+          },
+          {
+            "type": "icon",
+            "size": "sm",
+            "url": "https://developers-resource.landpress.line.me/fx/img/review_gold_star_28.png"
+          },
+          {
+            "type": "icon",
+            "size": "sm",
+            "url": "https://developers-resource.landpress.line.me/fx/img/review_gold_star_28.png"
+          },
+          {
+            "type": "icon",
+            "size": "sm",
+            "url": "https://developers-resource.landpress.line.me/fx/img/review_gray_star_28.png"
+          },
+          {
             "type": "text",
-            "text": "เช็กลิสต์ก่อนเปิดร้านเช้านี้",
-            "weight": "bold",
-            "size": "lg",
-            "align": "center"
+            "text": "4.0",
+            "size": "sm",
+            "color": "#999999",
+            "margin": "md",
+            "flex": 0
           }
         ]
       },
       {
-        "type": "text",
-        "text": "☕ บาร์กาแฟ",
-        "weight": "bold",
-        "margin": "md"
-      },
-      {
-        "type": "text",
-        "text": "• เปิดเครื่อง / เติมน้ำ-น้ำแข็ง\n• เช็ดเคาน์เตอร์ / หัวชง\n• Test กาแฟแก้วแรก",
-        "size": "sm",
-        "color": "#111111",
-        "wrap": true
-      },
-      {
-        "type": "text",
-        "text": "🍳 ครัว",
-        "weight": "bold",
-        "margin": "md"
-      },
-      {
-        "type": "text",
-        "text": "• เช็กสต็อก (ข้าว/เนื้อ/ผัก/ซอส)\n• ตรวจคุณภาพ สด/สะอาด\n• เตรียม portion พร้อมใช้",
-        "size": "sm",
-        "color": "#111111",
-        "wrap": true
-      },
-      {
-        "type": "text",
-        "text": "🧹 ภายนอก",
-        "weight": "bold",
-        "margin": "md"
-      },
-      {
-        "type": "text",
-        "text": "• จัดโต๊ะเก้าอี้ทางเข้า\n• กวาด/ถูพื้น\n• เช็กห้องน้ำ/ถังขยะ",
-        "size": "sm",
-        "color": "#111111",
-        "wrap": true
+        "type": "box",
+        "layout": "vertical",
+        "margin": "lg",
+        "spacing": "sm",
+        "contents": [
+          {
+            "type": "box",
+            "layout": "baseline",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "Place",
+                "color": "#aaaaaa",
+                "size": "sm",
+                "flex": 1
+              },
+              {
+                "type": "text",
+                "text": "Flex Tower, 7-7-4 Midori-ku, Tokyo",
+                "wrap": true,
+                "color": "#666666",
+                "size": "sm",
+                "flex": 5
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "baseline",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "Time",
+                "color": "#aaaaaa",
+                "size": "sm",
+                "flex": 1
+              },
+              {
+                "type": "text",
+                "text": "10:00 - 23:00",
+                "wrap": true,
+                "color": "#666666",
+                "size": "sm",
+                "flex": 5
+              }
+            ]
+          }
+        ]
       }
     ]
   },
@@ -85,20 +138,34 @@
     "contents": [
       {
         "type": "button",
-        "style": "primary",
-        "color": "#1DB446",
+        "style": "link",
+        "height": "sm",
         "action": {
-          "type": "postback",
-          "label": "รับงานเรียบร้อย ✅",
-          "data": "action=ack&list=morning",
-          "displayText": "รับงานเรียบร้อยแล้วครับ/ค่ะ"
+          "type": "uri",
+          "label": "CALL",
+          "uri": "https://line.me/"
         }
+      },
+      {
+        "type": "button",
+        "style": "link",
+        "height": "sm",
+        "action": {
+          "type": "uri",
+          "label": "WEBSITE",
+          "uri": "https://line.me/"
+        }
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [],
+        "margin": "sm"
       }
-    ]
+    ],
+    "flex": 0
   }
 }
-
-
         }  
       ])
       liff.closeWindow()
