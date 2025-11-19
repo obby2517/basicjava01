@@ -2,111 +2,133 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
-  <title>LIFF App</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>ปิดร้านเรียบร้อย</title>
+  <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
 </head>
-<body>
-  <script src="https://static.line-scdn.net/liff/edge/versions/2.5.0/sdk.js"></script>
+<body style="margin:0; padding:20px; background:#f0f0f0; font-family: sans-serif;">
+  <div style="text-align:center; padding:20px;">
+    <h3>กำลังส่งข้อความปิดร้าน...</h3>
+    <p>กรุณารอสักครู่</p>
+  </div>
+
   <script>
-      async function main() {
-      await liff.init({ liffId: "2008527446-7N96EDWM" })
-      await liff.shareTargetPicker([
-       {
+    async function main() {
+      try {
+        await liff.init({ liffId: "2008527446-7N96EDWM" });
+
+        // เช็คว่าเปิดใน LINE จริง ๆ และสามารถส่งข้อความได้
+        if (!liff.isInClient()) {
+          alert("กรุณาเปิดลิงก์นี้ในแอป LINE เท่านั้น");
+          liff.closeWindow();
+          return;
+        }
+
+        await liff.sendMessages([{
           type: "flex",
-          altText: "Flex message From Share Target Picker",
-          contents:{
-  "type": "bubble",
-  "header": {
-    "type": "box",
-    "layout": "vertical",
-    "paddingAll": "16px",
-    "backgroundColor": "#BBDEFB",
-    "contents": [
-      {
-        "type": "text",
-        "text": "ปิดร้านแล้ววันนี้ 🙏 ขอบคุณทีมทุกคนที่ช่วยกันดูแลร้านทั้งวัน ร้านจะน่ารักได้ก็เพราะมีทีมที่ใส่ใจแบบนี้ครับ 💚",
-        "weight": "bold",
-        "size": "md",
-        "align": "center",
-        "wrap": true
-      }
-    ]
-  },
-  "body": {
-    "type": "box",
-    "layout": "vertical",
-    "spacing": "md",
-    "contents": [
-      {
-        "type": "box",
-        "layout": "vertical",
-        "paddingAll": "12px",
-        "backgroundColor": "#E3F2FD",
-        "cornerRadius": "12px",
-        "contents": [
-          {
-            "type": "text",
-            "text": "สิ่งที่ต้องทำก่อนปิดร้าน",
-            "weight": "bold",
-            "wrap": true
-          },
-          {
-            "type": "text",
-            "text": "• เก็บทำความสะอาดโต๊ะ/เก้าอี้/เคาน์เตอร์\n• ล้างอุปกรณ์บาร์และครัว\n• เก็บสต็อกวัตถุดิบเข้าที่",
-            "size": "sm",
-            "margin": "sm",
-            "wrap": true
+          altText: "ปิดร้านแล้ววันนี้ 🙏 ขอบคุณทีมทุกคนที่ช่วยกันดูแลร้านทั้งวัน",
+          contents: {
+            "type": "bubble",
+            "header": {
+              "type": "box",
+              "layout": "vertical",
+              "paddingAll": "16px",
+              "backgroundColor": "#BBDEFB",
+              "contents": [
+                {
+                  "type": "text",
+                  "text": "ปิดร้านแล้ววันนี้ 🙏 ขอบคุณทีมทุกคนที่ช่วยกันดูแลร้านทั้งวัน ร้านจะน่ารักได้ก็เพราะมีทีมที่ใส่ใจแบบนี้ครับ 💚",
+                  "weight": "bold",
+                  "size": "md",
+                  "align": "center",
+                  "wrap": true,
+                  "color": "#000000"
+                }
+              ]
+            },
+            "body": {
+              "type": "box",
+              "layout": "vertical",
+              "spacing": "md",
+              "contents": [
+                {
+                  "type": "box",
+                  "layout": "vertical",
+                  "paddingAll": "12px",
+                  "backgroundColor": "#E3F2FD",
+                  "cornerRadius": "12px",
+                  "contents": [
+                    {
+                      "type": "text",
+                      "text": "สิ่งที่ต้องทำก่อนปิดร้าน",
+                      "weight": "bold"
+                    },
+                    {
+                      "type": "text",
+                      "text": "• เก็บทำความสะอาดโต๊ะ/เก้าอี้/เคาน์เตอร์\n• ล้างอุปกรณ์บาร์และครัว\n• เก็บสต็อกวัตถุดิบเข้าที่",
+                      "size": "sm",
+                      "margin": "sm",
+                      "wrap": true
+                    }
+                  ]
+                },
+                {
+                  "type": "box",
+                  "layout": "vertical",
+                  "paddingAll": "12px",
+                  "backgroundColor": "#E8EAF6",
+                  "cornerRadius": "12px",
+                  "contents": [
+                    {
+                      "type": "text",
+                      "text": "ตรวจเช็กสุดท้าย",
+                      "weight": "bold"
+                    },
+                    {
+                      "type": "text",
+                      "text": "• ปิดระบบไฟ/แอร์\n• ทิ้งขยะ + แยกรีไซเคิล\n• เช็กประตู/กล้องวงจรปิด",
+                      "size": "sm",
+                      "margin": "sm",
+                      "wrap": true
+                    }
+                  ]
+                }
+              ]
+            },
+            "footer": {
+              "type": "box",
+              "layout": "vertical",
+              "spacing": "sm",
+              "contents": [
+                {
+                  "type": "button",
+                  "style": "primary",
+                  "color": "#1E88E5",
+                  "height": "sm",
+                  "action": {
+                    "type": "postback",
+                    "label": "ปิดงานเรียบร้อย ✅",
+                    "data": "action=ack&list=evening",
+                    "displayText": "ปิดงานเรียบร้อยแล้วครับ/ค่ะ"
+                  }
+                }
+              ]
+            }
           }
-        ]
-      },
-      {
-        "type": "box",
-        "layout": "vertical",
-        "paddingAll": "12px",
-        "backgroundColor": "#E8EAF6",
-        "cornerRadius": "12px",
-        "contents": [
-          {
-            "type": "text",
-            "text": "ตรวจเช็กสุดท้าย",
-            "weight": "bold",
-            "wrap": true
-          },
-          {
-            "type": "text",
-            "text": "• ปิดระบบไฟ/แอร์\n• ทิ้งขยะ + แยกรีไซเคิล\n• เช็กประตู/กล้องวงจรปิด",
-            "size": "sm",
-            "margin": "sm",
-            "wrap": true
-          }
-        ]
+        }]);
+
+        // ส่งสำเร็จแล้วแจ้งเตือนนิดนึงแล้วปิด
+        alert("ส่งข้อความปิดร้านเรียบร้อยแล้วครับ ✅");
+        liff.closeWindow();
+
+      } catch (error) {
+        console.error(error);
+        alert("เกิดข้อผิดพลาด: " + error.message);
       }
-    ]
-  },
-  "footer": {
-    "type": "box",
-    "layout": "vertical",
-    "spacing": "sm",
-    "contents": [
-      {
-        "type": "button",
-        "style": "primary",
-        "color": "#1E88E5",
-        "action": {
-          "type": "postback",
-          "label": "ปิดงานเรียบร้อย ✅",
-          "data": "action=ack&list=evening",
-          "displayText": "ปิดงานเรียบร้อยแล้วครับ/ค่ะ"
-        }
-      }
-    ]
-  }
-}
-        }  
-      ])
-      liff.closeWindow()
-        }
-    main()
+    }
+
+    // รันอัตโนมัติเมื่อเปิดหน้า
+    main();
   </script>
 </body>
 </html>
