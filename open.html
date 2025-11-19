@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
+  <title>LIFF App</title>
+</head>
+<body>
+  <script src="https://static.line-scdn.net/liff/edge/versions/2.5.0/sdk.js"></script>
+  <script>
+      async function main() {
+      await liff.init({ liffId: "2008527446-7N96EDWM" })
+      await liff.shareTargetPicker([
+       {
+          type: "flex",
+          altText: "Flex message From Share Target Picker",
+          contents:{
+  "type": "bubble",
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "spacing": "md",
+    "contents": [
+      {
+        "type": "box",
+        "layout": "vertical",
+        "paddingAll": "14px",
+        "backgroundColor": "#E8F5E9",
+        "cornerRadius": "12px",
+        "contents": [
+          {
+            "type": "text",
+            "text": "เช็กลิสต์ก่อนเปิดร้านเช้านี้",
+            "weight": "bold",
+            "size": "lg",
+            "align": "center"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "☕ บาร์กาแฟ",
+        "weight": "bold",
+        "margin": "md"
+      },
+      {
+        "type": "text",
+        "text": "• เปิดเครื่อง / เติมน้ำ-น้ำแข็ง\n• เช็ดเคาน์เตอร์ / หัวชง\n• Test กาแฟแก้วแรก",
+        "size": "sm",
+        "color": "#111111",
+        "wrap": true
+      },
+      {
+        "type": "text",
+        "text": "🍳 ครัว",
+        "weight": "bold",
+        "margin": "md"
+      },
+      {
+        "type": "text",
+        "text": "• เช็กสต็อก (ข้าว/เนื้อ/ผัก/ซอส)\n• ตรวจคุณภาพ สด/สะอาด\n• เตรียม portion พร้อมใช้",
+        "size": "sm",
+        "color": "#111111",
+        "wrap": true
+      },
+      {
+        "type": "text",
+        "text": "🧹 ภายนอก",
+        "weight": "bold",
+        "margin": "md"
+      },
+      {
+        "type": "text",
+        "text": "• จัดโต๊ะเก้าอี้ทางเข้า\n• กวาด/ถูพื้น\n• เช็กห้องน้ำ/ถังขยะ",
+        "size": "sm",
+        "color": "#111111",
+        "wrap": true
+      }
+    ]
+  },
+  "footer": {
+    "type": "box",
+    "layout": "vertical",
+    "spacing": "sm",
+    "contents": [
+      {
+        "type": "button",
+        "style": "primary",
+        "color": "#1DB446",
+        "action": {
+          "type": "postback",
+          "label": "รับงานเรียบร้อย ✅",
+          "data": "action=ack&list=morning",
+          "displayText": "รับงานเรียบร้อยแล้วครับ/ค่ะ"
+        }
+      }
+    ]
+  }
+}
+
+
+        }  
+      ])
+      liff.closeWindow()
+        }
+    main()
+  </script>
+</body>
+</html>
