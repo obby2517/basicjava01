@@ -16,116 +16,68 @@
           altText: "Flex message From Share Target Picker",
           contents:{
   "type": "bubble",
-  "hero": {
-    "type": "image",
-    "url": "https://developers-resource.landpress.line.me/fx/img/01_1_cafe.png",
-    "size": "full",
-    "aspectRatio": "20:13",
-    "aspectMode": "cover",
-    "action": {
-      "type": "uri",
-      "uri": "https://line.me/"
-    }
+  "header": {
+    "type": "box",
+    "layout": "vertical",
+    "paddingAll": "16px",
+    "backgroundColor": "#BBDEFB",
+    "contents": [
+      {
+        "type": "text",
+        "text": "ปิดร้านแล้ววันนี้ 🙏 ขอบคุณทีมทุกคนที่ช่วยกันดูแลร้านทั้งวัน ร้านจะน่ารักได้ก็เพราะมีทีมที่ใส่ใจแบบนี้ครับ 💚",
+        "weight": "bold",
+        "size": "md",
+        "align": "center",
+        "wrap": true
+      }
+    ]
   },
   "body": {
     "type": "box",
     "layout": "vertical",
+    "spacing": "md",
     "contents": [
       {
-        "type": "text",
-        "text": "Brown Cafe",
-        "weight": "bold",
-        "size": "xl"
-      },
-      {
         "type": "box",
-        "layout": "baseline",
-        "margin": "md",
+        "layout": "vertical",
+        "paddingAll": "12px",
+        "backgroundColor": "#E3F2FD",
+        "cornerRadius": "12px",
         "contents": [
           {
-            "type": "icon",
-            "size": "sm",
-            "url": "https://developers-resource.landpress.line.me/fx/img/review_gold_star_28.png"
-          },
-          {
-            "type": "icon",
-            "size": "sm",
-            "url": "https://developers-resource.landpress.line.me/fx/img/review_gold_star_28.png"
-          },
-          {
-            "type": "icon",
-            "size": "sm",
-            "url": "https://developers-resource.landpress.line.me/fx/img/review_gold_star_28.png"
-          },
-          {
-            "type": "icon",
-            "size": "sm",
-            "url": "https://developers-resource.landpress.line.me/fx/img/review_gold_star_28.png"
-          },
-          {
-            "type": "icon",
-            "size": "sm",
-            "url": "https://developers-resource.landpress.line.me/fx/img/review_gray_star_28.png"
+            "type": "text",
+            "text": "สิ่งที่ต้องทำก่อนปิดร้าน",
+            "weight": "bold",
+            "wrap": true
           },
           {
             "type": "text",
-            "text": "4.0",
+            "text": "• เก็บทำความสะอาดโต๊ะ/เก้าอี้/เคาน์เตอร์\n• ล้างอุปกรณ์บาร์และครัว\n• เก็บสต็อกวัตถุดิบเข้าที่",
             "size": "sm",
-            "color": "#999999",
-            "margin": "md",
-            "flex": 0
+            "margin": "sm",
+            "wrap": true
           }
         ]
       },
       {
         "type": "box",
         "layout": "vertical",
-        "margin": "lg",
-        "spacing": "sm",
+        "paddingAll": "12px",
+        "backgroundColor": "#E8EAF6",
+        "cornerRadius": "12px",
         "contents": [
           {
-            "type": "box",
-            "layout": "baseline",
-            "spacing": "sm",
-            "contents": [
-              {
-                "type": "text",
-                "text": "Place",
-                "color": "#aaaaaa",
-                "size": "sm",
-                "flex": 1
-              },
-              {
-                "type": "text",
-                "text": "Flex Tower, 7-7-4 Midori-ku, Tokyo",
-                "wrap": true,
-                "color": "#666666",
-                "size": "sm",
-                "flex": 5
-              }
-            ]
+            "type": "text",
+            "text": "ตรวจเช็กสุดท้าย",
+            "weight": "bold",
+            "wrap": true
           },
           {
-            "type": "box",
-            "layout": "baseline",
-            "spacing": "sm",
-            "contents": [
-              {
-                "type": "text",
-                "text": "Time",
-                "color": "#aaaaaa",
-                "size": "sm",
-                "flex": 1
-              },
-              {
-                "type": "text",
-                "text": "10:00 - 23:00",
-                "wrap": true,
-                "color": "#666666",
-                "size": "sm",
-                "flex": 5
-              }
-            ]
+            "type": "text",
+            "text": "• ปิดระบบไฟ/แอร์\n• ทิ้งขยะ + แยกรีไซเคิล\n• เช็กประตู/กล้องวงจรปิด",
+            "size": "sm",
+            "margin": "sm",
+            "wrap": true
           }
         ]
       }
@@ -138,32 +90,16 @@
     "contents": [
       {
         "type": "button",
-        "style": "link",
-        "height": "sm",
+        "style": "primary",
+        "color": "#1E88E5",
         "action": {
-          "type": "uri",
-          "label": "CALL",
-          "uri": "https://line.me/"
+          "type": "postback",
+          "label": "ปิดงานเรียบร้อย ✅",
+          "data": "action=ack&list=evening",
+          "displayText": "ปิดงานเรียบร้อยแล้วครับ/ค่ะ"
         }
-      },
-      {
-        "type": "button",
-        "style": "link",
-        "height": "sm",
-        "action": {
-          "type": "uri",
-          "label": "WEBSITE",
-          "uri": "https://line.me/"
-        }
-      },
-      {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [],
-        "margin": "sm"
       }
-    ],
-    "flex": 0
+    ]
   }
 }
         }  
