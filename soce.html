@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
+  <title>LIFF App</title>
+</head>
+<body>
+  <script src="https://static.line-scdn.net/liff/edge/versions/2.5.0/sdk.js"></script>
+  <script>
+      async function main() {
+      await liff.init({ liffId: "1657892998-4UTvVxxp" })
+      await liff.shareTargetPicker([
+       {
+          type: "flex",
+          altText: "Flex message From Share Target Picker",
+          contents:{
+  "type": "bubble",
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "image",
+        "url": "https://lh5.googleusercontent.com/d/1l_i2QChcSwnFkA5_2-RSOP_txuA8Wvft",
+        "size": "full",
+        "aspectMode": "cover"
+      },
+      {
+        "type": "text",
+        "text": "Click",
+        "size": "3xl",
+        "align": "center",
+        "weight": "bold",
+        "color": "#3127F5",
+        "position": "relative",
+        "gravity": "center"
+      }
+    ],
+    "cornerRadius": "300px",
+    "action": {
+      "type": "uri",
+      "label": "buy",
+      "uri": "https://s3t.me/zMuwCYnz"
+    },
+    "paddingAll": "none"
+  }
+}
+      
+        
+        }  
+      ])
+      liff.closeWindow()
+        }
+    main()
+  </script>
+</body>
+</html>
